@@ -1,0 +1,25 @@
+{
+  "name": "project-players-01",
+  "version": "1.0.0",
+  "description": "player ratings and details",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "lint": "eslint index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:mountblue/Aug-Js-Backend/project-players-vishnu.git"
+  },
+  "author": "vishnu",
+  "license": "ISC"
+}
