@@ -42,6 +42,11 @@ app.get('/pages/players.html', (req, res) => {
 //   const filename = `.${q.pathname}`;
   res.render('players', data);
 });
+app.get('/pages/home.html', (req, res) => {
+  //   const q = url.parse(req.url);
+  //   const filename = `.${q.pathname}`;
+  res.render('home', data);
+});
 
 app.get('/assets/stylesheets/*', (req, res) => {
   const q = url.parse(req.url);
