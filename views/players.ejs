@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="assets_ejs/stylesheets/players.css">
+    <link rel="stylesheet" href="/assets/stylesheets/players.css" type="text/css">
     <title>PLAYERS</title>
 </head>
 
@@ -25,43 +25,101 @@
     <section>
         <div class="players-container">
             <div class="players">
-                <h3>Name: <%= player1.playername %></h3>
-                <p>image</p>
-                <p>details
-                    <ul>
-                        <li><strong>Age:</strong><%= player1.age %></li>
-                        <li><strong>Born:</strong><%= player1.born %></li>
-                        <li><strong>Role:</strong><%= player1.role %></li>
-                        <li><strong>Batting-Style:</strong><%= player1.battingstyle %></li>
-                        <li><strong>Bowling-Style:</strong><%= player1.bowlingstyle %></li>
-                    </ul>
-                </p>
-            </div>
-            <div class="players">
-                    <h3>Name: <%= player2.playername %></h3>
-                    <p>image</p>
+                <div class="image"></div>
+                <div class="details">
+                    <h3>Name:
+                        <%= player1.playername %>
+                    </h3>
+
                     <p>details
                         <ul>
-                            <li><strong>Age:</strong><%= player2.age %></li>
-                            <li><strong>Born:</strong><%= player2.born %></li>
-                            <li><strong>Role:</strong><%= player2.role %></li>
-                            <li><strong>Batting-Style:</strong><%= player2.battingstyle %></li>
-                            <li><strong>Bowling-Style:</strong><%= player2.bowlingstyle %></li>
+                            <li>
+                                <strong>Age:</strong>
+                                <%= player1.age %>
+                            </li>
+                            <li>
+                                <strong>Born:</strong>
+                                <%= player1.born %>
+                            </li>
+                            <li>
+                                <strong>Role:</strong>
+                                <%= player1.role %>
+                            </li>
+                            <li>
+                                <strong>Batting-Style:</strong>
+                                <%= player1.battingstyle %>
+                            </li>
+                            <li>
+                                <strong>Bowling-Style:</strong>
+                                <%= player1.bowlingstyle %>
+                            </li>
                         </ul>
                     </p>
+                </div>
             </div>
             <div class="players">
-                    <h3>Name:<%=player3.playername%></h3>
-                    <p>image</p>
+                <div class="image"></div>
+                <div>
+                    <h3>Name:
+                        <%= player2.playername %>
+                    </h3>
                     <p>details
                         <ul>
-                            <li><strong>Age:</strong><%= player3.age %></li>
-                            <li><strong>Born:</strong><%= player3.born %></li>
-                            <li><strong>Role:</strong><%= player3.role %></li>
-                            <li><strong>Batting-Style:</strong><%= player3.battingstyle %></li>
-                            <li><strong>Bowling-Style:</strong><%= player3.bowlingstyle %></li>
+                            <li>
+                                <strong>Age:</strong>
+                                <%= player2.age %>
+                            </li>
+                            <li>
+                                <strong>Born:</strong>
+                                <%= player2.born %>
+                            </li>
+                            <li>
+                                <strong>Role:</strong>
+                                <%= player2.role %>
+                            </li>
+                            <li>
+                                <strong>Batting-Style:</strong>
+                                <%= player2.battingstyle %>
+                            </li>
+                            <li>
+                                <strong>Bowling-Style:</strong>
+                                <%= player2.bowlingstyle %>
+                            </li>
                         </ul>
                     </p>
+                </div>
+            </div>
+            <div class="players">
+                <div class="image"></div>
+                <div>
+                    <h3>Name:
+                        <%=player3.playername%>
+                    </h3>
+                    <p>details
+                        <ul>
+                            <li>
+                                <strong>Age:</strong>
+                                <%= player3.age %>
+                            </li>
+                            <li>
+                                <strong>Born:</strong>
+                                <%= player3.born %>
+                            </li>
+                            <li>
+                                <strong>Role:</strong>
+                                <%= player3.role %>
+                            </li>
+                            <li>
+                                <strong>Batting-Style:</strong>
+                                <%= player3.battingstyle %>
+                            </li>
+                            <li>
+                                <strong>Bowling-Style:</strong>
+                                <%= player3.bowlingstyle %>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
             </div>
         </div>
     </section>

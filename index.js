@@ -1,7 +1,7 @@
 const express = require('express');
 
 
-// const url = require('url');
+const url = require('url');
 
 const app = express();
 
@@ -41,5 +41,11 @@ app.get('/pages/players.html', (req, res) => {
 //   const q = url.parse(req.url);
 //   const filename = `.${q.pathname}`;
   res.render('players', data);
+});
+
+app.get('/assets/stylesheets/*', (req, res) => {
+  const q = url.parse(req.url);
+  const filename = `${q.pathname}`;
+  res.sendFile(`${__dirname}${filename}`);
 });
 app.listen(4000);

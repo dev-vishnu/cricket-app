@@ -15,3 +15,16 @@ body{
     justify-content:space-around;
     flex-direction:column;
 }
+.players{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:flex-start;
+}
+.image{
+    margin:20px;
+    background-color:white;
+    width:200px;
+    height:200px;
+    border-color:black;
+    border-width:2px;
+}
