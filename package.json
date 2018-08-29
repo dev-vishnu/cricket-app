@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "player ratings and details",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.16.3"
+  },
   "devDependencies": {
     "eslint": "^5.4.0",
     "eslint-config-airbnb": "^17.1.0",
@@ -14,7 +16,7 @@
   "scripts": {
     "start": "npm-run-all --parallel eslint start-server",
     "eslint": "eslint index.js",
-    "start-server":"nodemon index.js",
+    "start-server": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
