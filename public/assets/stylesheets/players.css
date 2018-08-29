@@ -21,6 +21,9 @@ body{
     justify-content:flex-start;
 }
 .image{
+    background-image: url("/assets/images/dhoni.jpeg");
+    background-repeat: no-repeat;
+    background-size:100%;
     margin:20px;
     background-color:white;
     width:200px;
