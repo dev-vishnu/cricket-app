@@ -1,14 +1,16 @@
 body{
-    background:teal;
+    background-image:url('../images/bg.jpg');
+    background-size:auto;
+    background-attachment: fixed;
 }
 
-.header{
+/* .header{
     display:flex;
     padding:10px;
     justify-content:space-around;
     background-color: rgb(6, 10, 71);
 
-}
+} */
 .players-container{
     display:flex;
     padding:10px;

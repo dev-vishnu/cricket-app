@@ -1,15 +1,17 @@
 body{
-    background:teal;
+    background-image:url('../images/bg.jpg');
+    background-size:auto;
+    background-attachment: fixed;
 }
 
-.header{
+/* .header{
     display:flex;
     flex-wrap: wrap;
     padding:10px;
     justify-content:space-around;
     background-color: rgb(6, 10, 71);
 
-}
+} */
 .tabs{
     flex-wrap:wrap;
     flex-grow:1;
