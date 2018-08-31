@@ -27,37 +27,39 @@
     <section>
         <div class="players-container">
             <% players.forEach((player) => { %>
-                <div class="cards">
-                    <div class="details">
-                        <h3>Name:
-                            <%= player.playername %>
-                        </h3>
-                        <p>Details
-                            <ul>
-                                <li>
-                                    <strong>Age:</strong>
-                                    <%= player.age %>
-                                </li>
-                                <li>
-                                    <strong>Born:</strong>
-                                    <%= player.born %>
-                                </li>
-                                <li>
-                                    <strong>Role:</strong>
-                                    <%= player.role %>
-                                </li>
-                                <li>
-                                    <strong>Batting Style</strong>
-                                    <%= player.battingstyle %>
-                                </li>
-                                <li>
-                                    <strong>Bowling Style</strong>
-                                    <%= player.bowlingstyle %>
-                                </li>
-                            </ul>
-                        </p>
+                <a href="./playerdetails/<%= player.id %>">
+                    <div class="cards">
+                        <div class="info">
+                            <div>
+                                <h3>Name:
+                                    <%= player.playername %>
+                                </h3>
+                            </div>
+                            <div class="details">
+                                <p>
+                                    <ul>
+
+                                        <li>
+                                            <strong>Role:</strong>
+                                            <%= player.role %>
+                                        </li>
+                                        <li>
+                                            <strong>Batting Style</strong>
+                                            <%= player.battingstyle %>
+                                        </li>
+                                        <li>
+                                            <strong>Bowling Style</strong>
+                                            <%= player.bowlingstyle %>
+                                        </li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="image">
+                            <img src="/assets/images/<%-player.id-%>.jpg">
+                        </div>
                     </div>
-                </div>
+                </a>
                 <% }); %>
         </div>
 

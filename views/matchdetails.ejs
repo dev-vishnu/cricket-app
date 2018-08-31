@@ -14,31 +14,37 @@
     <section>
         <div class="matches-container">
             <h1>India's Tour of England 2018</h1>
-
-            <% matches.forEach(match =>{ %>
-                <a href="/matchdetails/<%= match.match_id%>">
                     <div class="matches">
                         <h1>
                             <strong>
-                                <%= match.match%>
+                               <%=match%> 
                             </strong>
                         </h1>
                         <ul>
                             <li>
-                                <%=match.teams%>
+                                <%=teams%>
                             </li>
                             <li>
-                                <%=match.date%>
+                                Date: <%=date%>
                             </li>
                             <li>
-                                <%=match.location%>
+                                Location :<%=location%>
                             </li>
-
+                            <li>
+                                Toss : <%=toss%>
+                            </li>
+                            <li>
+                                Score : <%=score%>
+                            </li>
+                            <li>
+                                Winner : <%=winner%>
+                            </li>
+                            <li>
+                                Man of the Match : <%=mom%>
+                            </li>
                         </ul>
                     </div>
                 </a>
-                <%})%>
-
         </div>
     </section>
 

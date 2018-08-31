@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/stylesheets/playersdetails.css" type="text/css">
+    <title>PLAYERS</title>
+</head>
+
+<body>
+    <header class="header">
+        <% include partials/nav.ejs %>
+    </header>
+    <section>
+        <div class="players-container">
+            <div class="cards">
+                <div>
+                    <h3>Name:
+                        <%= playername %>
+                    </h3>
+                    <img class="image" src="/assets/images/<%-id-%>.jpg">
+                </div>
+                <div class="details">
+                    <p>Details
+                        <ul>
+                            <li>
+                                <strong>Age:</strong>
+                                <%=age %>
+                            </li>
+                            <li>
+                                <strong>Born:</strong>
+                                <%= born %>
+                            </li>
+                            <li>
+                                <strong>Role:</strong>
+                                <%=role %>
+                            </li>
+                            <li>
+                                <strong>Batting Style</strong>
+                                <%= battingstyle %>
+                            </li>
+                            <li>
+                                <strong>Bowling Style</strong>
+                                <%=bowlingstyle %>
+                            </li>
+                            <li>
+                                <strong>Debut:</strong>
+                                <ul>
+                                    <%debut.forEach((element) => { %>
+
+                                        <li>
+                                            <%=element%>
+                                        </li>
+
+                                        <% })%>
+
+                                </ul>
+
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+
+
+            </div>
+        </div>
+
+    </section>
+
+</body>
+
+</html>

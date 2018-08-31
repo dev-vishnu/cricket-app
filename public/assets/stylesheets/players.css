@@ -1,5 +1,4 @@
 body{
-    background-image:url('../images/bg.jpg');
     background-size:auto;
     background-attachment: fixed;
 }
@@ -15,16 +14,18 @@ body{
     padding:10px;
     flex-wrap:wrap;
     justify-content:space-around;
-    flex-direction:row;
+    flex-direction:column;
 }
 .cards{
+    justify-content:space-between;
+    color:white;
     display:flex;
-    flex-direction:column;
+    flex-direction:row;
     margin:5px;
     padding:10px;
     flex-grow:1;
     flex-basis:20%;
-    background-color: tomato;    
+    background-color:rgb(39, 39, 129);    
 }
 .details{
     padding:5px;
@@ -32,4 +33,9 @@ body{
     flex-direction:column;
     margin:2px;
 
+}
+.image{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
 }

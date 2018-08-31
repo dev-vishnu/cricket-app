@@ -17,8 +17,8 @@
   "scripts": {
     "start": "npm-run-all --parallel eslintwatch open-src ",   
     "eslintwatch":"npm run eslint --watch",
-    "eslint": "esw public/src",
-    "open-src":"nodemon public/src/index.js",
+    "eslint": "esw src",
+    "open-src":"nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
