@@ -1,5 +1,6 @@
 body{
     background-size:auto;
+    background-image: url('../images/bg.gif');
     background-attachment: fixed;
 }
 /* .header{

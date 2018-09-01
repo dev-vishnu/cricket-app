@@ -3,14 +3,21 @@ const express = require('express');
 // const playerData = require('./data.js');
 
 const app = express();
-const router = require('./router.js');
+const home = require('../controller/home.js');
+const players = require('../controller/players.js');
+const matches = require('../controller/matches.js');
 
 app.set('view engine', 'ejs');
 
 
 // const data = playerData.getData();
 app.use(express.static('public'));
-app.use('/', router);
+app.use('/', home);
+app.use('/home', home);
+app.use('/players', players);
+app.use('/players/:id', players);
+app.use('/matches', matches);
+app.use('/matches/:id', matches);
 
 // app.get('/home.html', (req, res) => {
 //   res.render('home', data);
