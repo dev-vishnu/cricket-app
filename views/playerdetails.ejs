@@ -17,7 +17,7 @@
                     <h3>Name:
                         <%= playername %>
                     </h3>
-                    <img class="image" src="/assets/images/<%-id-%>.jpg">
+                    <img class="image" src="/assets/images/<%-player_id-%>.jpg">
                 </div>
                 <div class="details">
                     <p>Details
@@ -41,20 +41,6 @@
                             <li>
                                 <strong>Bowling Style</strong>
                                 <%=bowlingstyle %>
-                            </li>
-                            <li>
-                                <strong>Debut:</strong>
-                                <ul>
-                                    <%debut.forEach((element) => { %>
-
-                                        <li>
-                                            <%=element%>
-                                        </li>
-
-                                        <% })%>
-
-                                </ul>
-
                             </li>
                         </ul>
                     </p>

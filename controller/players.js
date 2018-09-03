@@ -1,19 +1,22 @@
 
 const express = require('express');
-const dataApi = require('../controller/dataManager.js');
-
+const dataApi = require('../controller/playersDataManager.js');
 
 const players = express.Router();
 
 players.get('/', (req, res) => {
-  const playerData = dataApi.getPlayerData();
-  res.render('players', playerData);
+  const promise = dataApi.getPlayerData();
+  promise.then((playerData) => {
+    res.render('players', playerData);
+  });
 });
 
 players.get('/:id', (req, res) => {
   const playerID = req.params.id;
-  const playerDetails = dataApi.getPlayerById(playerID);
-  res.render('playerdetails', playerDetails);
+  const promise = dataApi.getPlayerById(playerID);
+  promise.then((playerDetails) => {
+    res.render('playerdetails', playerDetails);
+  });
 });
 
 module.exports = players;

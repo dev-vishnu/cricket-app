@@ -5,7 +5,9 @@
   "main": "index.js",
   "dependencies": {
     "ejs": "^2.6.1",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "mysql": "^2.16.0",
+    "mysql2": "^1.6.1"
   },
   "devDependencies": {
     "eslint": "^5.4.0",
@@ -15,10 +17,11 @@
     "eslint-plugin-react": "^7.11.1"
   },
   "scripts": {
-    "start": "npm-run-all --parallel eslintwatch open-src ",   
-    "eslintwatch":"npm run eslint --watch",
+    "scripts": "node dbScripts.js",
+    "start": "npm-run-all --parallel eslintwatch open-src ",
+    "eslintwatch": "npm run eslint --watch",
     "eslint": "esw src",
-    "open-src":"nodemon src/index.js",
+    "open-src": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

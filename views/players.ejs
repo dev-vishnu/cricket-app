@@ -27,7 +27,7 @@
     <section>
         <div class="players-container">
             <% players.forEach((player) => { %>
-                <a href="./players/<%= player.id %>">
+                <a href="./players/<%= player.player_id %>">
                     <div class="cards">
                         <div class="info">
                             <div>
@@ -56,7 +56,7 @@
                             </div>
                         </div>
                         <div class="image">
-                            <img src="/assets/images/<%-player.id-%>.jpg">
+                            <img src="/assets/images/<%-player.player_id-%>.jpg">
                         </div>
                     </div>
                 </a>
