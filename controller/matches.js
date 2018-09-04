@@ -4,18 +4,12 @@ const dataApi = require('../controller/matchesDataManager.js');
 const matches = express.Router();
 
 matches.get('/', (req, res) => {
-  const promise = dataApi.getMatchData();
-  promise.then((matchData) => {
-    res.render('matches', matchData);
-  });
+  dataApi.getMatchData(req, res);
 });
 
 matches.get('/:id', (req, res) => {
   const matchID = req.params.id;
-  const promise = dataApi.getMatchById(matchID);
-  promise.then(((matchDetails) => {
-    res.render('matchdetails', matchDetails);
-  }));
+  dataApi.getMatchById(matchID, req, res);
 });
 
 module.exports = matches;

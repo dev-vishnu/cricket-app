@@ -17,8 +17,8 @@
     "eslint-plugin-react": "^7.11.1"
   },
   "scripts": {
-    "scripts": "node dbScripts.js",
-    "start": "npm-run-all --parallel eslintwatch open-src ",
+    "start": "npm-run-all --parallel  db eslintwatch open-src ",
+    "db" : "node migrations/setUpDB.js",
     "eslintwatch": "npm run eslint --watch",
     "eslint": "esw src",
     "open-src": "nodemon src/index.js",

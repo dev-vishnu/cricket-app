@@ -9,7 +9,7 @@
         "toss": "India, Opt to bowl",
         "score": "Eng-268/10 & Ind-269/2",
         "winner": "India",
-        "mom": "Kuldeep Yadav"
+        "mom": 2
       },
       {
         "match_id": 1,
@@ -20,7 +20,7 @@
         "toss": "India, Opt to bowl",
         "score": "Eng-268/10 & Ind-269/2",
         "winner": "India",
-        "mom": "Kuldeep Yadav"
+        "mom": 1
       },
       {
         "match_id": 2,
@@ -31,7 +31,7 @@
         "toss": "India, Opt to bowl",
         "score": "Eng-268/10 & Ind-269/2",
         "winner": "India",
-        "mom": "Kuldeep Yadav"
+        "mom": 3
       },
       {
         "match_id": 3,
@@ -42,7 +42,7 @@
         "toss": "India, Opt to bowl",
         "score": "Eng-268/10 & Ind-269/2",
         "winner": "India",
-        "mom": "Kuldeep Yadav"
+        "mom": 0
       }
   
     ]

@@ -1,44 +1,29 @@
 // const playerData = require('../models/players.json');
 // const matchData = require('../models/matches.json');
-const mysql = require('mysql');
+const con = require('../migrations/createConnection');
 
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'password',
-  database: 'webapp',
-});
-connection.connect((err) => {
-  if (err)console.log(err);
-  console.log('Connected!');
-});
-
-function getPlayerData() {
-  const promise = new Promise((resolve, reject) => {
-    connection.query('select*from players', (err, rows) => {
-      if (err) {
-        reject();
-      } else {
-        const playerData = { players: rows };
-        resolve(playerData);
-      }
-    });
+async function getPlayerData(req, res) {
+  const query = 'select * from players';
+  await con.connection.connect();
+  await con.connection.execute(query, (err, result) => {
+    if (err) throw (err);
+    else {
+      const playerData = { players: result };
+      res.render('players', playerData);
+    }
   });
-
-  return promise;
 }
 
-function getPlayerById(ID) {
-  const promise = new Promise((resolve, reject) => {
-    connection.query('select * from players where player_id = ?', [ID], (err, rows) => {
-      if (err) {
-        reject();
-      } else {
-        resolve(rows[0]);
-      }
-    });
+
+async function getPlayerById(ID, req, res) {
+  const query = 'select*from players where player_id = ?';
+  await con.connection.connect();
+  await con.connection.execute(query, [ID], (err, result) => {
+    if (err) throw (err);
+    else {
+      res.render('playerdetails', result[0]);
+    }
   });
-  return promise;
 }
 
 module.exports.getPlayerData = getPlayerData;

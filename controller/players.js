@@ -5,18 +5,12 @@ const dataApi = require('../controller/playersDataManager.js');
 const players = express.Router();
 
 players.get('/', (req, res) => {
-  const promise = dataApi.getPlayerData();
-  promise.then((playerData) => {
-    res.render('players', playerData);
-  });
+  dataApi.getPlayerData(req, res);
 });
 
 players.get('/:id', (req, res) => {
   const playerID = req.params.id;
-  const promise = dataApi.getPlayerById(playerID);
-  promise.then((playerDetails) => {
-    res.render('playerdetails', playerDetails);
-  });
+  dataApi.getPlayerById(playerID, req, res);
 });
 
 module.exports = players;

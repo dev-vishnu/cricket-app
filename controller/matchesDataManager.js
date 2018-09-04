@@ -1,47 +1,26 @@
+const con = require('../migrations/createConnection');
 
-const mysql = require('mysql');
-
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'password',
-  database: 'webapp',
-});
-
-connection.connect((err) => {
-  if (err)console.log(err);
-  console.log('Connected!');
-});
-
-function getMatchData() {
-  let matchData = {};
-  const promise1 = new Promise((resolve, reject) => {
-    connection.query('select*from matches', (err, rows) => {
-      if (err) {
-        reject();
-      } else {
-        matchData = { matches: rows };
-        resolve(matchData);
-      }
-    });
+async function getMatchData(req, res) {
+  const query = 'select * from matches';
+  await con.connection.connect();
+  await con.connection.execute(query, (err, result) => {
+    const matchData = { matches: result };
+    res.render('matches', matchData);
   });
-  return promise1;
 }
 
-function getMatchById(ID) {
-  const promise = new Promise((resolve, reject) => {
-    connection.query('select*from matches where match_id = ?', [ID], (err, rows) => {
-      if (err) {
-        reject();
-      } else {
-        resolve(rows[0]);
-      }
-    });
+async function getMatchById(ID, req, res) {
+  const query = 'select a.*, b.playername from matches a,players b where (a.match_id = ? && a.mom = b.player_id)';
+
+  await con.connection.connect();
+  await con.connection.execute(query, [ID], (err, result) => {
+    if (err) throw err;
+    else {
+      res.render('matchdetails', result[0]);
+    }
   });
-  return promise;
 }
 
 
 module.exports.getMatchData = getMatchData;
 module.exports.getMatchById = getMatchById;
-// module.exports.getManOfMatchByMatchId = getManOfMatchByMatchId;
