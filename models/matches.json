@@ -7,26 +7,26 @@
         "location": "TrentBridge, Nottingham",
         "match": "1st ODI",
         "toss": "India, Opt to bowl",
-        "score": "Eng-268/10 & Ind-269/2",
+        "score": "Eng-322/7 & Ind-323/5",
         "winner": "India",
         "mom": 2
       },
       {
         "match_id": 1,
         "teams": "India vs England",
-        "date": "Thu, July 12",
-        "location": "TrentBridge, Nottingham",
+        "date": "Thu, July 14",
+        "location": "Leeds",
         "match": "2nd ODI",
         "toss": "India, Opt to bowl",
-        "score": "Eng-268/10 & Ind-269/2",
+        "score": "Eng-185/10 & Ind-187/8",
         "winner": "India",
         "mom": 1
       },
       {
         "match_id": 2,
         "teams": "India vs England",
-        "date": "Thu, July 12",
-        "location": "TrentBridge, Nottingham",
+        "date": "Thu, July 17",
+        "location": "Lord's",
         "match": "3rd ODI",
         "toss": "India, Opt to bowl",
         "score": "Eng-268/10 & Ind-269/2",
@@ -36,11 +36,11 @@
       {
         "match_id": 3,
         "teams": "India vs England",
-        "date": "Thu, July 12",
-        "location": "TrentBridge, Nottingham",
+        "date": "Thu, July 20",
+        "location": "Bermingham",
         "match": "4th ODI",
         "toss": "India, Opt to bowl",
-        "score": "Eng-268/10 & Ind-269/2",
+        "score": "Eng-200/10 & Ind-201/1",
         "winner": "India",
         "mom": 0
       }

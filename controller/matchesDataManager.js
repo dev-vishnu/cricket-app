@@ -10,8 +10,9 @@ async function getMatchData(req, res) {
 }
 
 async function getMatchById(ID, req, res) {
-  const query = 'select a.*, b.playername from matches a,players b where (a.match_id = ? && a.mom = b.player_id)';
-
+  // const query = 'select a.*, b.playername from matches a,
+  // players b where (a.match_id = ? && a.mom = b.player_id)';
+  const query = 'select matches.*,players.playername from matches left join players on matches.mom = players.player_id where( match_id = ? )';
   await con.connection.connect();
   await con.connection.execute(query, [ID], (err, result) => {
     if (err) throw err;

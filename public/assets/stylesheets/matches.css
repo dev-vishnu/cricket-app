@@ -1,7 +1,6 @@
 body{
-    background-size:auto;
-    background-image: url('../images/bg.gif');
-    background-attachment: fixed;
+    color:white;
+    background-color: black;
 }
 
 /* .header{
@@ -15,5 +14,8 @@ body{
     display:flex;
     padding:10px;
     justify-content:space-around;
-    flex-direction:column;
+}
+a:link{
+    text-decoration: none;
+
 }

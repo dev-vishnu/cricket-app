@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/stylesheets/matches.css">
-    <title>MATHCHES</title>
+    <title>MATCHES</title>
 </head>
 
 <body>
@@ -16,27 +16,25 @@
             <h1>India's Tour of England 2018</h1>
 
             <% matches.forEach(match =>{ %>
-                <a href="/matches/<%= match.match_id%>">
-                    <div class="matches">
-                        <h1>
-                            <strong>
-                                <%= match.match%>
-                            </strong>
-                        </h1>
-                        <ul>
-                            <li>
-                                <%=match.teams%>
-                            </li>
-                            <li>
-                                <%=match.date%>
-                            </li>
-                            <li>
-                                <%=match.location%>
-                            </li>
 
-                        </ul>
-                    </div>
-                </a>
+                <h1>
+                    <strong>
+                        <a href="/matches/<%= match.match_id%>"> <%= match.matchname%> </a>
+                    </strong>
+                </h1>
+                <ul>
+                    <li>
+                        <%=match.teams%>
+                    </li>
+                    <li>
+                        <%=match.date%>
+                    </li>
+                    <li>
+                        <%=match.location%>
+                    </li>
+
+                </ul>
+
                 <%})%>
 
         </div>
