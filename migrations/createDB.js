@@ -5,12 +5,11 @@ const query = 'create database cricDb';
 async function createDB() {
   await con.connection.connect();
 
-  await con.connection.execute(query, (err, rows) => {
+  await con.connection.execute(query, (err) => {
     if (err) {
       console.log('DB already exists');
     } else {
       console.log('creating database');
-      console.log(rows);
     }
   });
 }
