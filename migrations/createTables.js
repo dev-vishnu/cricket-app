@@ -1,4 +1,6 @@
-const con = require('./createConnection');
+const mysql = require('mysql2');
+const config = require('./config.js');
+
 const playerData = require('./insertPlayerData');
 const matchData = require('./insertMatchesData');
 
@@ -7,8 +9,9 @@ const query1 = 'create table players (player_id int,playername varchar(255),age 
 const query2 = 'create table matches (match_id int,teams varchar(255),date varchar(255),location varchar(255),matchname varchar(255),toss varchar(255),score varchar(255),winner varchar(255),mom int)';
 
 async function createTables() {
-  await con.connection.connect();
-  await con.connection.execute(query1, (err) => {
+  const connection = mysql.createConnection(config);
+  await connection.connect();
+  await connection.execute(query1, (err) => {
     if (err) {
       console.log('table already exist');
     } else {
@@ -16,7 +19,7 @@ async function createTables() {
       playerData.insertPlayerData();
     }
   });
-  await con.connection.execute(query2, (err) => {
+  await connection.execute(query2, (err) => {
     if (err) {
       console.log('table already exist');
     } else {
