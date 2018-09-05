@@ -4,7 +4,6 @@ const config = {
   user: 'root',
   password: 'password',
   database: 'cricDb',
-
 };
 
 module.exports = config;

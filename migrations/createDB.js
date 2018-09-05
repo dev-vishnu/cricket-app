@@ -1,19 +1,24 @@
-const mysql = require('mysql2');
-const config = require('./config.js');
+const mysql = require('mysql2/promise');
+// const config = require('./config.js');
 
 
 const query = 'create database if not exists cricDb';
 
 async function createDB() {
-  const connection = mysql.createConnection(config);
-  await connection.connect();
-  await connection.execute(query, (err) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log('creating database');
+  try {
+    const connection = await mysql.createConnection({
+      host: 'localhost',
+      user: 'root',
+      password: 'password',
+    });
+    try {
+      await connection.connect();
+      await connection.execute(query);
+    } catch (error) {
+      console.log(error);
     }
-  });
+  } catch (error) {
+    console.log(error);
+  }
 }
-
-module.exports.createDB = createDB;
+createDB();

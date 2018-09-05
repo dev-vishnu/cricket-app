@@ -1,20 +1,21 @@
-const mysql = require('mysql2');
-const config = require('../migrations/config.js');
+const mysql = require('mysql2/promise');
+const config = require('../config/config.js');
 const playerData = require('../models/players.json');
 
-function insertPlayerData() {
-  playerData.players.forEach(async (element) => {
-    const query = `insert into players values(${element.id},"${element.playername}",${element.age},"${element.born}","${element.birthplace}","${element.born}","${element.battingstyle}","${element.bowlingstyle}")`;
-    const connection = mysql.createConnection(config);
-    await connection.connect();
-    await connection.execute(query, (err) => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log('inserting player data..');
+async function insertPlayerData() {
+  try {
+    const connection = await mysql.createConnection(config);
+    playerData.players.forEach(async (element) => {
+      const query = `insert into players values(${element.id},"${element.playername}",${element.age},"${element.born}","${element.birthplace}","${element.born}","${element.battingstyle}","${element.bowlingstyle}")`;
+      try {
+        await connection.execute(query);
+      } catch (error) {
+        console.log(error);
       }
     });
-  });
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 module.exports.insertPlayerData = insertPlayerData;

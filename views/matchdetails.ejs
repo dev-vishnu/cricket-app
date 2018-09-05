@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/stylesheets/matches.css">
-    <title>MATHCHES</title>
+    <title>MATCHES</title>
 </head>
 
 <body>
@@ -17,30 +17,30 @@
                     <div class="matches">
                         <h1>
                             <strong>
-                               <%=matchname%> 
+                               <%=match.matchname%> 
                             </strong>
                         </h1>
                         <ul>
                             <li>
-                                <%=teams%>
+                                <%=match.teams%>
                             </li>
                             <li>
-                                Date: <%=date%>
+                                Date: <%=match.date%>
                             </li>
                             <li>
-                                Location :<%=location%>
+                                Location :<%=match.location%>
                             </li>
                             <li>
-                                Toss : <%=toss%>
+                                Toss : <%=match.toss%>
                             </li>
                             <li>
-                                Score : <%=score%>
+                                Score : <%=match.score%>
                             </li>
                             <li>
-                                Winner : <%=winner%>
+                                Winner : <%=match.winner%>
                             </li>
                             <li>
-                               Man of the Match :<a href="../players/<%=mom%>"><%=playername%></a>
+                               Man of the Match :<a href="../players/<%=match.mom%>"><%=match.playername%></a>
                             </li>
                         </ul>
                     </div>
