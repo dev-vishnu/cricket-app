@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const connection = require('../migrations/setUpConnection');
+const Matches = require('../models/matchModel.js');
 
 const Players = connection.define('players', {
   player_id: {
@@ -15,4 +16,5 @@ const Players = connection.define('players', {
   bowlingstyle: Sequelize.STRING,
 });
 
+Matches.belongsTo(Players);
 module.exports = Players;

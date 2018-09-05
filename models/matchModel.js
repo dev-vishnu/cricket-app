@@ -15,7 +15,8 @@ const Matches = connection.define('matches', {
   toss: Sequelize.STRING,
   score: Sequelize.STRING,
   winner: Sequelize.STRING,
-  mom: {
+  playerPlayerId: {
+    foreignKey: true,
     type: Sequelize.INTEGER,
   },
 });

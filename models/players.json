@@ -40,6 +40,16 @@
         "role": "Batsman",
         "battingstyle": "Right Handed Bat",
         "bowlingstyle": "Right-arm medium"
+      },
+      {
+        "player_id": 4,
+        "playername": "Suresh Raina",
+        "age": 29,
+        "born": "December 07,1988",
+        "birthplace": "Uttar Pradesh",
+        "role": "Batsman",
+        "battingstyle": "Left Handed Bat",
+        "bowlingstyle": "Right-arm Off-Break"
       }
     ]
   }

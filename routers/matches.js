@@ -1,19 +1,26 @@
 const express = require('express');
-const dataApi = require('../controller/matchesDataManager.js');
+const dataApi = require('../controller/matchController.js');
 
 const matches = express.Router();
 
 
 matches.get('/', async (req, res) => {
-  const data = await dataApi.getMatchData();
-  await res.render('matches', { matches: data });
+  try {
+    const data = await dataApi.getMatchData();
+    await res.render('matches', { matches: data });
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 matches.get('/:id', async (req, res) => {
   const matchId = req.params.id;
-  const data = await dataApi.getMatchById(matchId);
-  console.log(data.matchname);
-  res.render('matchdetails', { match: data });
+  try {
+    const data = await dataApi.getMatchById(matchId);
+    res.render('matchdetails', { match: data });
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 module.exports = matches;

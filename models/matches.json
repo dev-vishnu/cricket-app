@@ -9,7 +9,7 @@
         "toss": "India, Opt to bowl",
         "score": "Eng-322/7 & Ind-323/5",
         "winner": "India",
-        "mom": 2
+        "playerPlayerId": 2
       },
       {
         "match_id": 1,
@@ -20,7 +20,7 @@
         "toss": "India, Opt to bowl",
         "score": "Eng-185/10 & Ind-187/8",
         "winner": "India",
-        "mom": 1
+        "playerPlayerId": 1
       },
       {
         "match_id": 2,
@@ -31,7 +31,7 @@
         "toss": "India, Opt to bowl",
         "score": "Eng-268/10 & Ind-269/2",
         "winner": "India",
-        "mom": 3
+        "playerPlayerId": 3
       },
       {
         "match_id": 3,
@@ -42,7 +42,7 @@
         "toss": "India, Opt to bowl",
         "score": "Eng-200/10 & Ind-201/1",
         "winner": "India",
-        "mom": 0
+        "playerPlayerId": 0
       }
   
     ]
