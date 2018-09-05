@@ -6,6 +6,7 @@
   "dependencies": {
     "ejs": "^2.6.1",
     "express": "^4.16.3",
+    "mangodb": "^1.0.0",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.1"
   },
@@ -18,7 +19,7 @@
   },
   "scripts": {
     "start": "npm-run-all --parallel  db eslintwatch open-src ",
-    "db" : "node migrations/setUpDB.js",
+    "db": "node migrations/setUpDB.js",
     "eslintwatch": "npm run eslint --watch",
     "eslint": "esw src",
     "open-src": "nodemon src/index.js",
