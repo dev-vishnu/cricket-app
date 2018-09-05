@@ -15,32 +15,32 @@
             <div class="cards">
                 <div>
                     <h3>Name:
-                        <%= playername %>
+                        <%= player.playername %>
                     </h3>
-                    <img class="image" src="/assets/images/<%-player_id-%>.jpg">
+                    <img class="image" src="/assets/images/<%-player.player_id-%>.jpg">
                 </div>
                 <div class="details">
                     <p>Details
                         <ul>
                             <li>
                                 <strong>Age:</strong>
-                                <%=age %>
+                                <%=player.age %>
                             </li>
                             <li>
                                 <strong>Born:</strong>
-                                <%= born %>
+                                <%= player.born %>
                             </li>
                             <li>
                                 <strong>Role:</strong>
-                                <%=role %>
+                                <%=player.role %>
                             </li>
                             <li>
                                 <strong>Batting Style</strong>
-                                <%= battingstyle %>
+                                <%= player.battingstyle %>
                             </li>
                             <li>
                                 <strong>Bowling Style</strong>
-                                <%=bowlingstyle %>
+                                <%=player.bowlingstyle %>
                             </li>
                         </ul>
                     </p>

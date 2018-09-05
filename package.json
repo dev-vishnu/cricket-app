@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "npm-run-all --parallel  db eslintwatch open-src ",
-    "db": "node migrations/setUpDB.js",
+    "db": "node migrations/createTable.js",
     "eslintwatch": "npm run eslint --watch",
     "eslint": "esw src",
     "open-src": "nodemon src/index.js",

@@ -1,30 +1,20 @@
 // const playerData = require('../models/players.json');
 // const matchData = require('../models/matches.json');
-const con = require('../migrations/createConnection');
+const playerModel = require('../models/playerModel.js');
 
-async function getPlayerData(req, res) {
-  const query = 'select * from players';
-  await con.connection.connect();
-  await con.connection.execute(query, (err, result) => {
-    if (err) throw (err);
-    else {
-      const playerData = { players: result };
-      res.render('players', playerData);
-    }
+
+async function getPlayerData() {
+  const result = await playerModel.findAll({
   });
+  return (result);
 }
-
-
-async function getPlayerById(ID, req, res) {
-  const query = 'select*from players where player_id = ?';
-  await con.connection.connect();
-  await con.connection.execute(query, [ID], (err, result) => {
-    if (err) throw (err);
-    else {
-      res.render('playerdetails', result[0]);
-    }
+async function getPlayerById(playerId) {
+  const result = await playerModel.findAll({
+    where: {
+      player_id: playerId,
+    },
   });
+  return result[0];
 }
-
 module.exports.getPlayerData = getPlayerData;
 module.exports.getPlayerById = getPlayerById;

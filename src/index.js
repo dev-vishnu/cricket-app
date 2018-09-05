@@ -3,9 +3,9 @@ const express = require('express');
 // const playerData = require('./data.js');
 
 const app = express();
-const home = require('../controller/home.js');
-const players = require('../controller/players.js');
-const matches = require('../controller/matches.js');
+const home = require('../routers/home.js');
+const players = require('../routers/players.js');
+const matches = require('../routers/matches.js');
 
 app.set('view engine', 'ejs');
 
