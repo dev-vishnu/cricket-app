@@ -4,6 +4,7 @@
   "description": "player ratings and details",
   "main": "index.js",
   "dependencies": {
+    "bcrypt": "^3.0.0",
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
