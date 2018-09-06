@@ -12,37 +12,25 @@
         <% include partials/nav.ejs %>
     </header>
     <section>
-        <div class= "form-container">
+        <div class="form-container">
             <div>
                 <p>
                     <h1>Sign Up</h1>
                 </p>
                 <form action="/register" method="POST">
-                    e-mail Id:<br>
-                    <input type="text" name="email">
-                    <br> Password: <br>
-                    <input type="password" name="password">
+                    <h2>e-mail Id:</h2>
+                    <input type="text" name="email" required>
                     <br>
-                    <input type="submit" formmethod="POST" value="Register">
+                    <h2>Password:</h2>
+                    <input type="password" name="password" required>
                     <br>
-
-                </form>
-            </div>
-            <div>
-                <p>
-                    <h1>Sign In</h1>
-                </p>
-                <form>
-                    e-mail Id:<br>
-                    <input type="text" name="email">
-                    <br> Password: <br>
-                    <input type="password" name="pasword">
-                    <br>
-                    <input type="submit" value="LogIn">
+                    <input type ="checkbox" name="agreement" required><p>I Agree with the Terms and Conditions</p>
+                    <input type="submit" value="Register" formmethod="POST">
                     <br>
 
                 </form>
             </div>
+          
         </div>
     </section>
 

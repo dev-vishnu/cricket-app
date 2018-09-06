@@ -16,7 +16,7 @@ home.post('/register', async (req, res) => {
     const user = await (req.body);
     const dbo = await authDB.authDB();
     await dbo.collection('user').insertOne(user);
-    res.send(`User Registered: ${req.body.email}`);
+    res.send(`User Registered: ${user.email}`);
   } catch (err) {
     res.send('Register failed');
     console.log(err);
