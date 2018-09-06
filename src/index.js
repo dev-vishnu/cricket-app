@@ -1,5 +1,6 @@
 
 const express = require('express');
+const bodyParser = require('body-parser');
 // const playerData = require('./data.js');
 
 const app = express();
@@ -8,8 +9,8 @@ const players = require('../router/players.js');
 const matches = require('../router/matches.js');
 
 app.set('view engine', 'ejs');
-
-
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 // const data = playerData.getData();
 app.use(express.static('public'));
 app.use('/', home);

@@ -24,3 +24,8 @@ a:link{
     text-decoration: none;
 
 }
+
+.form-container{
+    display:flex;
+    justify-content: space-around;
+}

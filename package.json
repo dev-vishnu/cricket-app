@@ -4,9 +4,11 @@
   "description": "player ratings and details",
   "main": "index.js",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "mangodb": "^1.0.0",
+    "mongodb": "^3.1.4",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.1"
   },
