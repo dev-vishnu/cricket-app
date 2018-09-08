@@ -1,4 +1,5 @@
 const express = require('express');
+const jwt = require('jsonwebtoken');
 const register = require('../controller/signUpController.js');
 const login = require('../controller/loginController.js');
 const logger = require('../winston/config.js');
@@ -11,7 +12,7 @@ loginSignUp.get('/', (req, res) => {
 });
 
 loginSignUp.get('/home', (req, res) => {
-  if (req.session.user !== undefined) {
+  if (req.body.auth === true) {
     res.render('home');
   } else {
     res.redirect('/');
@@ -37,15 +38,19 @@ loginSignUp.post('/login', async (req, res) => {
     res.send('login failed');
     logger.info(`login failed for ${user.email}`);
   } else {
-    logger.info(`login successful for ${user.email}`);
-    req.session.user = user;
-    req.session.save();
-    res.redirect('/home');
+    try {
+      logger.info(`login successful for ${user.email}`);
+      const token = await jwt.sign(user, 'hooooola');
+      res.cookie('access_token', token);
+      res.redirect('/home');
+    } catch (err) {
+      console.log(err);
+    }
   }
 });
 
 loginSignUp.get('/logout', (req, res) => {
-  req.session.destroy();
+  res.clearCookie('access_token');
   res.render('loginSignUp');
 });
 

@@ -1,9 +1,15 @@
+const jwt = require('jsonwebtoken');
 
-const checkAuth = function (req, res, next) {
-  if (req.session.user === undefined) {
-    req.session.auth = false;
+const checkAuth = async function (req, res, next) {
+  if (req.cookies.access_token === undefined) {
+    req.body = { auth: false };
   } else {
-    req.session.auth = true;
+    try {
+      await jwt.verify(req.cookies.access_token, 'hooooola');
+      req.body = { auth: true };
+    } catch (err) {
+      req.body = { auth: false };
+    }
   }
   next();
 };

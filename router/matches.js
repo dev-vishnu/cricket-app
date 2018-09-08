@@ -5,7 +5,7 @@ const matchController = require('../controller/matchesController.js');
 const matches = express.Router();
 
 matches.get('/', async (req, res) => {
-  if (req.session.auth === true) {
+  if (req.body.auth === true) {
     try {
       const matchData = await matchController.getMatchData(req, res);
       console.log(matchData);
@@ -19,7 +19,7 @@ matches.get('/', async (req, res) => {
 });
 
 matches.get('/:id', async (req, res) => {
-  if (req.session.auth === true) {
+  if (req.body.auth === true) {
     try {
       const matchID = req.params.id;
       const match = await matchController.getMatchById(matchID);

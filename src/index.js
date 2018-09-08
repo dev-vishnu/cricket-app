@@ -1,8 +1,9 @@
 
 const express = require('express');
-const session = require('express-session');
+// const session = require('express-session');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const winston = require('../winston/config.js');
 
 
@@ -19,7 +20,8 @@ app.use(express.static('public'));
 app.use(morgan('combined', { stream: winston.stream }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(session({ secret: 'yefaydfcavdfva3210d' }));
+app.use(cookieParser());
+// app.use(session({ secret: 'yefaydfcavdfva3210d' }));
 app.use(checkAuth);
 app.use('/home', home);
 app.use('/', loginSignUp);
