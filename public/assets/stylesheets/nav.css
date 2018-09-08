@@ -18,3 +18,8 @@ a:link{
     align-items: center;
     flex-wrap:wrap;
 }
+.logout{
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+}

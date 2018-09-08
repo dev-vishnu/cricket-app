@@ -1,39 +1,21 @@
-<!DOCTYPE html>
+<!doctypehtml>
 <html>
 
 <head>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/stylesheets/home.css">
-    <title>HOME</title>
+    <title>home</title>
 </head>
 
 <body>
     <header class="header">
         <% include partials/nav.ejs %>
     </header>
-    <section>
-        <div class="form-container">
-            <div>
-                <p>
-                    <h1>Sign Up</h1>
-                </p>
-                <form action="/register" method="POST">
-                    <h2>e-mail Id:</h2>
-                    <input type="text" name="email" required>
-                    <br>
-                    <h2>Password:</h2>
-                    <input type="password" name="password" required>
-                    <br>
-                    <input type ="checkbox" name="agreement" required><p>I Agree with the Terms and Conditions</p>
-                    <input type="submit" value="Register" formmethod="POST">
-                    <br>
-
-                </form>
-            </div>
-          
-        </div>
-    </section>
-
+    <p>
+        <h1>WELCOME YOU ARE NOW LOGGED IN</h1>
+        
+    </p>
 </body>
 
 </html>

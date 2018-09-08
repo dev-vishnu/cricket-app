@@ -1,5 +1,5 @@
 const mysql = require('mysql2/promise');
-const config = require('../config/config.js');
+const config = require('../config/dbConfig.js');
 const playerData = require('../models/players.json');
 
 async function insertPlayerData() {

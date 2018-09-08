@@ -1,5 +1,5 @@
 const mysql = require('mysql2/promise');
-const config = require('../config/config.js');
+const config = require('../config/dbConfig.js');
 
 const playerData = require('./insertPlayerData');
 const matchData = require('./insertMatchesData');
@@ -12,13 +12,13 @@ async function createTables() {
   const connection = await mysql.createConnection(config);
   try {
     await connection.execute(query1);
-    playerData.insertPlayerData();
+    await playerData.insertPlayerData();
   } catch (err) {
     console.log(err);
   }
   try {
     await connection.execute(query2);
-    matchData.insertMatchData();
+    await matchData.insertMatchData();
   } catch (err) {
     console.log(err);
   }

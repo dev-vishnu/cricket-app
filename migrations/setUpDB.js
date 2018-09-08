@@ -1,7 +1,7 @@
 // const createDB = require('./createDB');
 const createTables = require('./createTables');
 
-async function setup() {
+function setup() {
   createTables.createTables();
 }
 setup();

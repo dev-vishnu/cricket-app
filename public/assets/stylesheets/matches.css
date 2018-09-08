@@ -3,6 +3,10 @@ body{
     background-color: black;
 }
 
+.header{
+    display: flex;
+    justify-content: space-around;
+}
 /* .header{
     display:flex;
     padding:10px;

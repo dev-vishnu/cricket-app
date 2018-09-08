@@ -1,19 +1,29 @@
 const mysql = require('mysql2/promise');
-const config = require('../config/config');
+const config = require('../config/dbConfig');
 
 async function getMatchData() {
-  const connection = await mysql.createConnection(config);
-  const query = 'select * from matches';
-  const result = await connection.execute(query);
+  let result;
+  try {
+    const connection = await mysql.createConnection(config);
+    const query = 'select * from matches order by match_id asc';
+    result = await connection.execute(query);
+  } catch (err) {
+    console.log(err);
+  }
+
   return result;
 }
 
 async function getMatchById(id) {
-  // const query = 'select a.*, b.playername from matches a,
-  // players b where (a.match_id = ? && a.mom = b.player_id)';
-  const query = 'select matches.*,players.playername from matches left join players on matches.mom = players.player_id where( match_id = ? )';
-  const connection = await mysql.createConnection(config);
-  const result = await connection.execute(query, [id]);
+  let result;
+  try {
+    const query = 'select matches.*,players.playername from matches left join players on matches.mom = players.player_id where( match_id = ? )';
+    const connection = await mysql.createConnection(config);
+    result = await connection.execute(query, [id]);
+  } catch (err) {
+    console.log(err);
+  }
+
   return result;
 }
 

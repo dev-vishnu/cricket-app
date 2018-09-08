@@ -4,14 +4,19 @@
   "description": "player ratings and details",
   "main": "index.js",
   "dependencies": {
+    "app-root-path": "^2.1.0",
     "bcrypt": "^3.0.0",
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "js-alert": "^1.0.4",
     "mangodb": "^1.0.0",
     "mongodb": "^3.1.4",
+    "morgan": "^1.9.0",
     "mysql": "^2.16.0",
-    "mysql2": "^1.6.1"
+    "mysql2": "^1.6.1",
+    "winston": "^3.1.0"
   },
   "devDependencies": {
     "eslint": "^5.4.0",
