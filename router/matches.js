@@ -1,11 +1,10 @@
 const express = require('express');
 const matchController = require('../controller/matchesController.js');
-// const auth = require('../controller/authentication.js');
 
 const matches = express.Router();
 
 matches.get('/', async (req, res) => {
-  if (req.session.auth === true) {
+  if (req.isAuthenticated()) {
     try {
       const matchData = await matchController.getMatchData(req, res);
       console.log(matchData);
@@ -14,12 +13,12 @@ matches.get('/', async (req, res) => {
       console.log(err);
     }
   } else {
-    res.send('Access Denied');
+    res.redirect('/');
   }
 });
 
 matches.get('/:id', async (req, res) => {
-  if (req.session.auth === true) {
+  if (req.isAuthenticated()) {
     try {
       const matchID = req.params.id;
       const match = await matchController.getMatchById(matchID);
@@ -28,7 +27,7 @@ matches.get('/:id', async (req, res) => {
       console.log(err);
     }
   } else {
-    res.send('Access Denied');
+    res.redirect('/');
   }
 });
 

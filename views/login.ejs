@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/stylesheets/home.css">
+    <title>Login/SignUp</title>
+</head>
+
+<body>
+    <!-- <header class="header">
+        <% include partials/nav.ejs %>
+    </header> -->
+    <section>
+        <center>
+            <h1>Welcome To Indian Cricket Timeline</h1>
+        </center>
+        <div class="form-container">
+            <div>
+                <p>
+                    <h1>LogIn</h1>
+                </p>
+                <form action="/login" method="POST">
+                    <h2>e-mail Id:</h2>
+                    <input type="text" name="username" required>
+                    <br>
+                    <h2>Password:</h2>
+                    <input type="password" name="password" required>
+                    <br>
+                    <br>
+                    <input type="submit" value="Login" formmethod="POST">
+                    <br>
+
+                </form>
+                <h2><a href="/signUp">Create New Account</a></h2>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

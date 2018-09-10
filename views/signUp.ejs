@@ -12,7 +12,9 @@
         <% include partials/nav.ejs %>
     </header> -->
     <section>
-        <center><h1>Welcome To Indian Cricket Timeline</h1></center>
+        <center>
+            <h1>Welcome To Indian Cricket Timeline</h1>
+        </center>
         <div class="form-container">
             <div>
                 <p>
@@ -20,39 +22,21 @@
                 </p>
                 <form action="/register" method="POST">
                     <h2>e-mail Id:</h2>
-                    <input type="text" name="email" required>
+                    <input type="text" name="username" required>
                     <br>
                     <h2>Password:</h2>
                     <input type="password" name="password" required>
                     <br>
                     <br>
-                    <input type="checkbox" name="agreement"  required>I Agree with the Terms and Conditions
+                    <input type="checkbox" name="agreement" required>I Agree with the Terms and Conditions
                     <br>
                     <br>
                     <input type="submit" value="Register" formmethod="POST">
                     <br>
 
                 </form>
+                <h2>Already Registered ? <a href="/login">LogIn</a></h2>
             </div>
-            <div>
-                <p>
-                    <h1>Sign In</h1>
-                </p>
-                <form action="/login" method="POST">
-                    <h2>e-mail Id:</h2>
-                    <input type="text" name="email" required>
-                    <br>
-                    <h2>Password:</h2>
-                    <input type="password" name="password" required>
-                    <br>
-                    <br>
-                    <input type="submit" value="Login" formmethod="POST">
-                    <br>
-
-                </form>
-            </div>
-
-        </div>
     </section>
 
 </body>

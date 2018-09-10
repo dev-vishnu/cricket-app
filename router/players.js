@@ -1,12 +1,11 @@
 
 const express = require('express');
 const playerController = require('../controller/playersController.js');
-// const auth = require('../controller/authentication.js');
 
 const players = express.Router();
 
 players.get('/', async (req, res) => {
-  if (req.session.auth === true) {
+  if (req.isAuthenticated()) {
     try {
       const playerData = await playerController.getPlayerData(req, res);
       await res.render('players', { players: playerData[0] });
@@ -14,12 +13,12 @@ players.get('/', async (req, res) => {
       console.log(err);
     }
   } else {
-    res.send('Access Denied');
+    res.redirect('/');
   }
 });
 
 players.get('/:id', async (req, res) => {
-  if (req.session.auth === true) {
+  if (req.isAuthenticated()) {
     try {
       const playerID = req.params.id;
       const player = await playerController.getPlayerById(playerID);
@@ -28,7 +27,7 @@ players.get('/:id', async (req, res) => {
       console.log(err);
     }
   } else {
-    res.send('Access Denied');
+    res.redirect('/');
   }
 });
 

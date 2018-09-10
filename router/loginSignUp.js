@@ -1,17 +1,26 @@
 const express = require('express');
+const passport = require('passport');
+
+
 const register = require('../controller/signUpController.js');
-const login = require('../controller/loginController.js');
 const logger = require('../winston/config.js');
 
 
 const loginSignUp = express.Router();
 
 loginSignUp.get('/', (req, res) => {
-  res.render('loginSignUp');
+  res.render('login');
+});
+
+loginSignUp.get('/login', (req, res) => {
+  res.render('login');
+});
+loginSignUp.get('/signUp', (req, res) => {
+  res.render('signUp');
 });
 
 loginSignUp.get('/home', (req, res) => {
-  if (req.session.user !== undefined) {
+  if (req.isAuthenticated()) {
     res.render('home');
   } else {
     res.redirect('/');
@@ -23,30 +32,20 @@ loginSignUp.post('/register', async (req, res) => {
   const result = await register.registerUser(user);
   if (!result) {
     res.send('Register failed');
-    logger.info(`Registration failed for ${user.email}`);
+    logger.info(`Registration failed for ${user.username}`);
   } else {
-    logger.info(`${result.ops[0].email} Registered`);
-    res.send(`${result.ops[0].email} Registered`);
+    logger.info(`${result.ops[0].username} Registered`);
+    res.redirect('/login');
   }
 });
 
-loginSignUp.post('/login', async (req, res) => {
-  const user = req.body;
-  const status = await login.loginUser(user);
-  if (!status) {
-    res.send('login failed');
-    logger.info(`login failed for ${user.email}`);
-  } else {
-    logger.info(`login successful for ${user.email}`);
-    req.session.user = user;
-    req.session.save();
-    res.redirect('/home');
-  }
+loginSignUp.post('/login', passport.authenticate('local', { failureRedirect: '/', successRedirect: '/home' }), (req, res) => {
+  res.redirect('/home');
 });
 
 loginSignUp.get('/logout', (req, res) => {
   req.session.destroy();
-  res.render('loginSignUp');
+  res.render('login');
 });
 
 module.exports = loginSignUp;
