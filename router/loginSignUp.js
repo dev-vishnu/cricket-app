@@ -32,7 +32,7 @@ loginSignUp.post('/register', async (req, res) => {
 
 loginSignUp.post('/login', async (req, res) => {
   const user = req.body;
-  const status = login.loginUser(user);
+  const status = await login.loginUser(user);
   if (!status) {
     res.send('login failed');
     logger.info(`login failed for ${user.email}`);
