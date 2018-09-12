@@ -14,35 +14,133 @@
         <div class="players-container">
             <div class="cards">
                 <div>
-                    <h3>Name:
-                        <%= playername %>
-                    </h3>
-                    <img class="image" src="/assets/images/<%-player_id-%>.jpg">
+                    <h1 style="color:dodgerblue">
+                        <%= player.playername %>
+                    </h1>
+                    <img class="image" src="/assets/images/<%-player.player_id-%>.jpg">
                 </div>
                 <div class="details">
-                    <p>Details
+                    <p>
+                        <h1>Details</h1>
                         <ul>
                             <li>
-                                <strong>Age:</strong>
-                                <%=age %>
+                                <strong class="feilds">Country: </strong>
+                                <%=playerstats.country%>
                             </li>
                             <li>
-                                <strong>Born:</strong>
-                                <%= born %>
+                                <strong class="feilds">Age: </strong> 
+                                <%=playerstats.currentAge %>
                             </li>
                             <li>
-                                <strong>Role:</strong>
-                                <%=role %>
+                                <strong class="feilds">Born: </strong>
+                                <%= playerstats.born %>
                             </li>
                             <li>
-                                <strong>Batting Style</strong>
-                                <%= battingstyle %>
+                                <strong class="feilds">Role: </strong>
+                                <%=playerstats.playingRole %>
                             </li>
                             <li>
-                                <strong>Bowling Style</strong>
-                                <%=bowlingstyle %>
+                                <strong class="feilds">Batting Style: </strong>
+                                <%= player.battingstyle %>
+                            </li>
+                            <li>
+                                <strong class="feilds">Bowling Style: </strong>
+                                <%=player.bowlingstyle %>
+                            </li>
+                            <li>
+                                <strong class="feilds">Major Teams: </strong>
+                                <%=playerstats.majorTeams %>
+                            </li>
+                            <li>
+                                <strong class="feilds">About: </strong>
+                                <%=playerstats.profile %>
+                                
                             </li>
                         </ul>
+                    </p>
+                    <p>
+                        <h1>Batting Career Summary:</h1>
+
+
+                        <table style="width:100%">
+                            <tr style="color:red">
+                                <th>Careers</th>
+                                <th>50's</th>
+                                <th>100's</th>
+                                <th>Stumpings</th>
+                                <th>Catches</th>
+                                <th>6's</th>
+                                <th>4's</th>
+                                <th>Strike Rate</th>
+                                <th>Balls Faced</th>
+                                <th>Average</th>
+                                <th>Highest Score</th>
+                                <th>Runs</th>
+                                <th>Not Outs</th>
+                                <th>Innings</th>
+                                <th>Matches</th>
+                            </tr>
+
+
+                            <%for(i in battingstats){%>
+                                <tr>
+                                    <th style="color:green">
+                                        <%=i%>
+                                    </th>
+                                    <% for(j in battingstats[i]){%>
+
+                                        <th>
+                                            <%=battingstats[i][j]%>
+                                        </th>
+                                        <%}%>
+                                </tr>
+                                <%}%>
+
+
+
+                        </table>
+                    </p>
+
+                    <p>
+                        <h1> Bowling Career Summary: </h1>
+
+
+                        <table style="width:100%">
+                            <tr style="color:red">
+                                <th>Carrers</th>
+                                <th>10-Wickets</th>
+                                <th>5-Wickets</th>
+                                <th>4-Wickets</th>
+                                <th>Strike Rate</th>
+                                <th>Economy</th>
+                                <th>Average</th>
+                                <th>Best in a Match</th>
+                                <th>Best in a Innings</th>
+                                <th>Wickets</th>
+                                <th>Runs</th>
+                                <th>Balls</th>
+                                <th>Innings</th>
+                                <th>Matches</th>
+                            </tr>
+
+
+                            <%for(i in bowlingstats){%>
+                                <tr>
+                                    <th style="color:green">
+                                        <%=i%>
+                                    </th>
+                                    <% for(j in bowlingstats[i]){%>
+
+                                        <th>
+                                            <%=bowlingstats[i][j]%>
+                                        </th>
+                                        <%}%>
+                                </tr>
+                                <%}%>
+
+
+
+                        </table>
                     </p>
                 </div>
 

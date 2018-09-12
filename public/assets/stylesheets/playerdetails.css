@@ -11,3 +11,7 @@ a:link{
     display: flex;
     justify-content: space-around;
 }
+.feilds{
+    color:green;
+    font-size: 20px;
+}

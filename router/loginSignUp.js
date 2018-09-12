@@ -40,7 +40,7 @@ loginSignUp.post('/register', async (req, res) => {
 });
 
 loginSignUp.post('/login', passport.authenticate('local', { failureRedirect: '/', successRedirect: '/home' }), (req, res) => {
-  res.redirect('/home');
+  // res.redirect('/home');
 });
 
 loginSignUp.get('/logout', (req, res) => {
