@@ -3,7 +3,7 @@ const config = {
   host: 'localhost',
   user: 'root',
   password: 'password',
-  database: 'cricDb',
+  database: process.env.db || 'cricDb',
 };
 
 module.exports = config;

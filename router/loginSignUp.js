@@ -19,14 +19,6 @@ loginSignUp.get('/signUp', (req, res) => {
   res.render('signUp');
 });
 
-loginSignUp.get('/home', (req, res) => {
-  if (req.isAuthenticated()) {
-    res.render('home');
-  } else {
-    res.redirect('/');
-  }
-});
-
 loginSignUp.post('/register', async (req, res) => {
   const user = (req.body);
   const result = await register.registerUser(user);
@@ -40,11 +32,11 @@ loginSignUp.post('/register', async (req, res) => {
 });
 
 loginSignUp.post('/login', passport.authenticate('local', { failureRedirect: '/', successRedirect: '/home' }), (req, res) => {
-  // res.redirect('/home');
+  res.redirect('/home');
 });
 
 loginSignUp.get('/logout', (req, res) => {
-  req.session.destroy();
+  req.logout();
   res.render('login');
 });
 

@@ -1,11 +1,10 @@
 
 const checkAuth = function (req, res, next) {
-  if (req.session.user === undefined) {
-    req.session.auth = false;
+  if (!req.user) {
+    res.redirect('/');
   } else {
-    req.session.auth = true;
+    next();
   }
-  next();
 };
 
 module.exports = checkAuth;

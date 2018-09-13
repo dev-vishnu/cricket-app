@@ -4,10 +4,8 @@ const loginUser = require('../controller/loginController.js');
 
 
 function passportConfig(passport) {
-  console.log('in config');
   passport.use(new LocalStrategy(
     (async (username, password, done) => {
-      console.log(username);
       try {
         const result = await loginUser.findUserByUsername(username);
         if (!result) {
@@ -29,7 +27,6 @@ function passportConfig(passport) {
     if (!user) {
       done(null, false);
     }
-    console.log(user.username);
     done(null, user.username);
   });
 
@@ -37,13 +34,11 @@ function passportConfig(passport) {
     if (!username) {
       done(null, false);
     } else {
-      let result;
       try {
-        result = loginUser.findUserByUsername(username);
-        done(null, result);
+        done(null, username);
       } catch (err) {
         console.log(err);
-        done(err, result);
+        done(err, username);
       }
     }
   });

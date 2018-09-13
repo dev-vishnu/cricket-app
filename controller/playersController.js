@@ -1,6 +1,7 @@
 const mysql = require('mysql2/promise');
+const config = require('../config/dbConfig.js');
 
-async function getPlayerData(config) {
+async function getPlayerData() {
   let result;
   const query = 'select * from players order by player_id asc';
   try {
@@ -18,7 +19,7 @@ async function getPlayerData(config) {
 }
 
 
-async function getPlayerById(id, config) {
+async function getPlayerById(id) {
   const query = 'select*from players where player_id = ?';
   let result;
   try {

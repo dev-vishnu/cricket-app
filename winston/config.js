@@ -18,14 +18,23 @@ const options = {
     colorize: true,
   },
 };
-
-const logger = winston.createLogger({
-  transports: [
-    new winston.transports.File(options.file),
-    new winston.transports.Console(options.console),
-  ],
-  exitOnError: false,
-});
+let logger;
+if (process.env.logging === 'off') {
+  logger = winston.createLogger({
+    transports: [
+      new winston.transports.File(options.file),
+    ],
+    exitOnError: false,
+  });
+} else {
+  logger = winston.createLogger({
+    transports: [
+      new winston.transports.File(options.file),
+      new winston.transports.Console(options.console),
+    ],
+    exitOnError: false,
+  });
+}
 
 logger.stream = {
   write(message) {

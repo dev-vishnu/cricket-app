@@ -1,6 +1,7 @@
 const mysql = require('mysql2/promise');
+const config = require('../config/dbConfig.js');
 
-async function getMatchData(config) {
+async function getMatchData() {
   let result;
   try {
     const connection = await mysql.createConnection(config);
@@ -14,7 +15,7 @@ async function getMatchData(config) {
   return result;
 }
 
-async function getMatchById(id, config) {
+async function getMatchById(id) {
   let result;
   try {
     const query = 'select matches.*,players.playername from matches left join players on matches.mom = players.player_id where( match_id = ? )';
