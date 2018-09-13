@@ -4,13 +4,13 @@ const app = require('../src/index.js');
 
 
 describe('Testing User login', () => {
-  it('testing ("/login") routes with correct authentication', (done) => {
+  it('Testing login with correct credentials', (done) => {
     request(app).post('/login')
       .send({ username: 'vishnu', password: 'vishnu' })
       .expect(302, 'Found. Redirecting to /home')
       .end(done);
   });
-  it('testing ("/login") routes with incorrect authentication', (done) => {
+  it('Testing login with incorrect credentials', (done) => {
     request(app).post('/login')
       .send({ username: 'vishnu', password: 'afcbkJH' })
       .expect(302, 'Found. Redirecting to /')
