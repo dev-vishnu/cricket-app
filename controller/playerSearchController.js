@@ -1,7 +1,8 @@
 const mysql = require('mysql2/promise');
+const config = require('../config/dbConfig.js');
 
 
-async function getPlayerDataBySearch(config, searchTerm) {
+async function getPlayerDataBySearch(searchTerm) {
   let result;
   const query = 'select * from players where Match(playername, about, role, birthplace) Against(?)';
   try {
