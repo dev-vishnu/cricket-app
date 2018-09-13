@@ -11,6 +11,7 @@ const app = express();
 const loginSignUp = require('../router/loginSignUp');
 const players = require('../router/players.js');
 const matches = require('../router/matches.js');
+const search = require('../router/search.js');
 const passportConfig = require('../config/authConfig.js');
 
 app.set('view engine', 'ejs');
@@ -27,6 +28,7 @@ app.use(passport.session());
 
 app.use('/', loginSignUp);
 app.use('/players', players);
+app.use('/search', search);
 app.use('/matches', matches);
 
 

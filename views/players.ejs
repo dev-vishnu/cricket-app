@@ -13,42 +13,49 @@
     </header>
     <section>
         <div class="players-container">
+            <div class="search">
+                <form action="/search" method="GET">
+                    <h3>Search Player: </h3>
+                    <input name="search" type="text">
+                    <input type="submit" value="search">
+                </form>
+            </div>
             <% players.forEach((player) => { %>
-                <a href="./players/<%= player.player_id %>">
-                    <div class="cards">
-                        <div class="info">
-                            <div>
-                                <h3>Name:
-                                    <%= player.playername %>
-                                </h3>
-                            </div>
-                            <div class="details">
-                                <p>
-                                    <ul>
-
-                                        <li>
-                                            <strong>Role:</strong>
-                                            <%= player.role %>
-                                        </li>
-                                        <li>
-                                            <strong>Batting Style</strong>
-                                            <%= player.battingstyle %>
-                                        </li>
-                                        <li>
-                                            <strong>Bowling Style</strong>
-                                            <%= player.bowlingstyle %>
-                                        </li>
-                                    </ul>
-                                </p>
-                            </div>
+                <a href="./players/<%=player.player_id %>">
+                <div class="cards">
+                    <div class="info">
+                        <div>
+                            <h3>Name:
+                                <%= player.playername %>
+                            </h3>
                         </div>
-                        <div class="image">
-                            <img src="/assets/images/<%-player.player_id-%>.jpg">
+                        <div class="details">
+                            <p>
+                                <ul>
+
+                                    <li>
+                                        <strong>Role: </strong>
+                                        <%= player.role %>
+                                    </li>
+                                    <li>
+                                        <strong>Batting Style: </strong>
+                                        <%= player.battingstyle %>
+                                    </li>
+                                    <li>
+                                        <strong>Bowling Style: </strong>
+                                        <%= player.bowlingstyle %>
+                                    </li>
+                                </ul>
+                            </p>
                         </div>
                     </div>
+                    <div class="image">
+                        <img src="/assets/images/<%-player.player_id-%>.jpg">
+                    </div>
+                </div>
                 </a>
-                <% }); %>
-        </div>
+                <% });%>
+            </div>
 
     </section>
 

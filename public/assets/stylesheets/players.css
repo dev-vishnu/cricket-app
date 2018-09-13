@@ -24,6 +24,13 @@ a:link{
     justify-content:space-around;
     flex-direction:column;
 }
+.search{
+   display:flex; 
+   margin:5px;
+   padding:10px;
+   border-width:3px;
+
+}
 .cards{
     border-width:3px;
     justify-content:space-between;

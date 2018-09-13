@@ -13,8 +13,18 @@
         <% include partials/nav.ejs %>
     </header>
     <p>
-        <center><h1>WELCOME!<br>YOU ARE NOW LOGGED IN</h1></center>
-        
+        <center>
+            <h1>WELCOME!<br>YOU ARE NOW LOGGED IN</h1>
+            <br>
+
+            <form action='/search' method="GET">
+                <h3>Search Player: </h3>
+                <input name= search type=text>
+                <br>
+                <br>
+                <input type="submit" value="search">
+            </form>
+        </center>
     </p>
 </body>
 

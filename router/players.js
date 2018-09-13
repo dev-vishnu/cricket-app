@@ -11,7 +11,6 @@ players.get('/', async (req, res) => {
   if (req.isAuthenticated()) {
     try {
       const playerData = await playerController.getPlayerData(config);
-      console.log(playerData);
       await res.render('players', { players: playerData[0] });
     } catch (err) {
       console.log(err);
@@ -40,5 +39,6 @@ players.get('/:id', async (req, res) => {
     res.redirect('/');
   }
 });
+
 
 module.exports = players;
