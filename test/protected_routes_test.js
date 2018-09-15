@@ -48,6 +48,12 @@ describe('Testing protected routes with correct authentication', () => {
       .expect('location', '/home')
       .end(done);
   });
+  afterEach((done) => {
+    agent.get('/logout')
+      .expect(302)
+      .expect('location', '/')
+      .end(done);
+  });
   it('Testing ("/home") routes with correct authentication', (done) => {
     agent.get('/home')
       .expect(200)

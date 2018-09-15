@@ -37,7 +37,7 @@ auth.post('/login', passport.authenticate('local', { failureRedirect: '/', succe
 
 auth.get('/logout', (req, res) => {
   req.logout();
-  res.render('login');
+  res.redirect('/');
 });
 
 module.exports = auth;
