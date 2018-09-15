@@ -3,6 +3,7 @@ const config = require('../config/dbConfig.js');
 
 const playerData = require('./insertPlayerData');
 const matchData = require('./insertMatchesData');
+const logger = require('../winston/config.js');
 
 const query1 = 'create table players (player_id int,pid int,playername varchar(255),age int,born varchar(255),birthplace varchar(255),role varchar(255),battingstyle varchar(255),bowlingstyle varchar(255),about text)';
 
@@ -14,13 +15,13 @@ async function createTables() {
     await connection.execute(query1);
     await playerData.insertPlayerData();
   } catch (err) {
-    console.log(err);
+    logger.info(err);
   }
   try {
     await connection.execute(query2);
     await matchData.insertMatchData();
   } catch (err) {
-    console.log(err);
+    logger.info(err);
   }
 }
 

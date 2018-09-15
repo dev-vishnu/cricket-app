@@ -1,6 +1,7 @@
 const mysql = require('mysql2/promise');
 const config = require('../config/dbConfig.js');
 const matchData = require('../models/matches.json');
+const logger = require('../winston/config.js');
 
 async function insertMatchData() {
   matchData.matches.forEach(async (element) => {
@@ -8,8 +9,9 @@ async function insertMatchData() {
     try {
       const connection = await mysql.createConnection(config);
       await connection.execute(query);
+      await connection.end();
     } catch (error) {
-      console.log(error);
+      logger.info(error);
     }
   });
 }

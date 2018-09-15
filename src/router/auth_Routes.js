@@ -2,24 +2,24 @@ const express = require('express');
 const passport = require('passport');
 
 
-const register = require('../controller/signUpController.js');
+const register = require('../controller/authController.js');
 const logger = require('../winston/config.js');
 
 
-const loginSignUp = express.Router();
+const auth = express.Router();
 
-loginSignUp.get('/', (req, res) => {
+auth.get('/', (req, res) => {
   res.render('login');
 });
 
-loginSignUp.get('/login', (req, res) => {
+auth.get('/login', (req, res) => {
   res.render('login');
 });
-loginSignUp.get('/signUp', (req, res) => {
+auth.get('/signUp', (req, res) => {
   res.render('signUp');
 });
 
-loginSignUp.post('/register', async (req, res) => {
+auth.post('/register', async (req, res) => {
   const user = (req.body);
   const result = await register.registerUser(user);
   if (!result) {
@@ -31,13 +31,13 @@ loginSignUp.post('/register', async (req, res) => {
   }
 });
 
-loginSignUp.post('/login', passport.authenticate('local', { failureRedirect: '/', successRedirect: '/home' }), (req, res) => {
+auth.post('/login', passport.authenticate('local', { failureRedirect: '/', successRedirect: '/home' }), (req, res) => {
   res.redirect('/home');
 });
 
-loginSignUp.get('/logout', (req, res) => {
+auth.get('/logout', (req, res) => {
   req.logout();
   res.render('login');
 });
 
-module.exports = loginSignUp;
+module.exports = auth;

@@ -1,10 +1,11 @@
 const winston = require('winston');
 const appRoot = require('app-root-path');
 
+
 const options = {
   file: {
     level: 'debug',
-    filename: `${appRoot}/logs/app.log`,
+    filename: `${appRoot}/src/logs/app.log`,
     handleExceptions: true,
     json: true,
     maxsize: 5242880,

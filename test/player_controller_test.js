@@ -1,7 +1,8 @@
-const expect = require('chai').expect;
+const expecting = require('chai').expect;
 
-const playerController = require('../controller/playersController.js');
+const playerController = require('../src/controller/playersController.js');
 
+/* eslint-env mocha */
 
 describe('Test For Controllers', () => {
   it('Testing Players Controller for all players', async () => {
@@ -35,7 +36,7 @@ describe('Test For Controllers', () => {
     } catch (err) {
       console.log(err);
     }
-    expect(expectedValue).deep.equal(playerData[0]);
+    expecting(expectedValue).deep.equal(playerData[0]);
   });
 
   it('Testing Players Controller by player_id', async () => {
@@ -61,6 +62,6 @@ describe('Test For Controllers', () => {
       console.log(err);
     }
 
-    expect(expectedValue).deep.equal(playerData[0]);
+    expecting(expectedValue).deep.equal(playerData[0]);
   });
 });

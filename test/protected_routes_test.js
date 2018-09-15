@@ -1,38 +1,41 @@
-const expect = require('chai').expect;
-const request = require('supertest');
-const app = require('../src/index.js');
 
+const request = require('supertest');
+const app = require('../src/app/index.js');
+
+const agent = request.agent(app);
+
+/* eslint-env mocha */
 
 describe('Testing Protected Routes without authentication', () => {
   it('Testing routes ("/") without authentication', (done) => {
-    request(app).get('/')
+    agent.get('/')
       .expect(200)
       .end(done);
   });
   it('Testing routes ("/signUp") without authentication', (done) => {
-    request(app).get('/signUp')
+    agent.get('/signUp')
       .expect(200)
       .end(done);
   });
   it('Testing routes ("/login") without authentication', (done) => {
-    request(app).get('/login')
+    agent.get('/login')
       .expect(200)
       .end(done);
   });
   it('Testing routes ("/home") without authentication', (done) => {
-    request(app).get('/home')
+    agent.get('/home')
       .expect(302)
       .expect('location', '/')
       .end(done);
   });
   it('Testing routes ("/players")without authentication', (done) => {
-    request(app).get('/players')
+    agent.get('/players')
       .expect(302)
       .expect('location', '/')
       .end(done);
   });
   it('Testing routes ("/matches")without authentication', (done) => {
-    request(app).get('/matches')
+    agent.get('/matches')
       .expect(302)
       .expect('location', '/')
       .end(done);
@@ -40,26 +43,25 @@ describe('Testing Protected Routes without authentication', () => {
 });
 
 describe('Testing protected routes with correct authentication', () => {
-  const authenticatedUser = request.agent(app);
-  it('Testing login in with correct authentication', (done) => {
-    authenticatedUser.post('/login')
+  beforeEach((done) => {
+    agent.post('/login')
       .send({ username: 'vishnu', password: 'vishnu' })
       .expect(302)
       .expect('location', '/home')
       .end(done);
   });
   it('Testing ("/home") routes with correct authentication', (done) => {
-    authenticatedUser.get('/home')
+    agent.get('/home')
       .expect(200)
       .end(done);
   });
   it('Testing ("/players") routes with correct authentication', (done) => {
-    authenticatedUser.get('/players')
+    agent.get('/players')
       .expect(200)
       .end(done);
   });
   it('Testing ("/matches") routes with correct authentication', (done) => {
-    authenticatedUser.get('/matches')
+    agent.get('/matches')
       .expect(200)
       .end(done);
   });

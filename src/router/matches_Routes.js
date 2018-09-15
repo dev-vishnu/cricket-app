@@ -1,26 +1,26 @@
 const express = require('express');
-const checkAuth = require('../controller/authentication.js');
 const matchController = require('../controller/matchesController.js');
-const config = require('../config/dbConfig');
+const config = require('../config/dbConfig.js');
+const logger = require('../winston/config.js');
 
 const matches = express.Router();
 
-matches.get('/', checkAuth, async (req, res) => {
+matches.get('/', async (req, res) => {
   try {
     const matchData = await matchController.getMatchData(config);
-    await res.render('matches', { matches: matchData[0] });
+    res.render('matches', { matches: matchData[0] });
   } catch (err) {
-    console.log(err);
+    logger.info(err);
   }
 });
 
-matches.get('/:id', checkAuth, async (req, res) => {
+matches.get('/:id', async (req, res) => {
   try {
     const matchID = req.params.id;
     const match = await matchController.getMatchById(matchID, config);
-    await res.render('matchdetails', { match: match[0][0] });
+    res.render('matchdetails', { match: match[0][0] });
   } catch (err) {
-    console.log(err);
+    logger.info(err);
   }
 });
 

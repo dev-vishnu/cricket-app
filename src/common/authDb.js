@@ -1,4 +1,5 @@
 const mongoClient = require('mongodb').MongoClient;
+const logger = require('../winston/config.js');
 
 async function authDB() {
   try {
@@ -6,7 +7,7 @@ async function authDB() {
     const dbo = await db.db('authUsers');
     return dbo;
   } catch (err) {
-    console.log(err);
+    logger.info(err);
     return err;
   }
 }

@@ -1,6 +1,5 @@
 const mysql = require('mysql2/promise');
-// const config = require('./config.js');
-
+const logger = require('../winston/config.js');
 
 const query = 'create database if not exists cricDb';
 
@@ -11,14 +10,10 @@ async function createDB() {
       user: 'root',
       password: 'password',
     });
-    try {
-      await connection.connect();
-      await connection.execute(query);
-    } catch (error) {
-      console.log(error);
-    }
+    await connection.connect();
+    await connection.execute(query);
   } catch (error) {
-    console.log(error);
+    logger.info(error);
   }
 }
 createDB();

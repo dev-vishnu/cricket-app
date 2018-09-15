@@ -1,6 +1,7 @@
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
-const loginUser = require('../controller/loginController.js');
+const loginUser = require('../controller/authController.js');
+const logger = require('../winston/config.js');
 
 
 function passportConfig(passport) {
@@ -37,7 +38,7 @@ function passportConfig(passport) {
       try {
         done(null, username);
       } catch (err) {
-        console.log(err);
+        logger.info(err);
         done(err, username);
       }
     }

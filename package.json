@@ -14,12 +14,14 @@
     "express-session": "^1.15.6",
     "js-alert": "^1.0.4",
     "mangodb": "^1.0.0",
+    "mocha": "^5.2.0",
     "mongodb": "^3.1.4",
     "morgan": "^1.9.0",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.1",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "path": "^0.12.7",
     "winston": "^3.1.0"
   },
   "devDependencies": {
@@ -28,17 +30,18 @@
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-mocha": "^5.2.0",
     "eslint-plugin-react": "^7.11.1",
     "superagent": "^3.8.3",
     "supertest": "^3.3.0"
   },
   "scripts": {
-    "start": "npm-run-all --parallel  db eslintwatch open-src ",
-    "db": "node migrations/setUpDB.js",
+    "start": "npm-run-all --parallel eslintwatch open-src ",
+    "db": "node src/migrations/setUpDB.js",
     "eslintwatch": "npm run eslint --watch",
     "eslint": "esw src",
-    "open-src": "nodemon src/index.js --no-deprecation",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "open-src": "nodemon src/app/index.js --no-deprecation",
+    "test": "db='testCricDb' logging='off' mocha --no-deprecation"
   },
   "repository": {
     "type": "git",

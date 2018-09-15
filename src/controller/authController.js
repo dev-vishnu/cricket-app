@@ -1,6 +1,15 @@
 const bcrypt = require('bcrypt');
-const authDB = require('../config/authDB.js');
+const authDB = require('../common/authDb.js');
 
+async function findUserByUsername(username) {
+  const dbo = await authDB.authDB();
+  const query = { username };
+  const result = await dbo.collection('users').find(query).toArray();
+  if (result.length === 0) {
+    return false;
+  }
+  return result[0];
+}
 
 async function registerUser(userdetails) {
   try {
@@ -14,10 +23,11 @@ async function registerUser(userdetails) {
       const result = await dbo.collection('users').insertOne(user);
       return result;
     }
-    return 0;
+    return false;
   } catch (err) {
-    return 0;
+    return false;
   }
 }
 
 module.exports.registerUser = registerUser;
+module.exports.findUserByUsername = findUserByUsername;
