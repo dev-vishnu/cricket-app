@@ -5,17 +5,17 @@ const appRoot = require('app-root-path');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const passport = require('passport');
-const winston = require('../winston/config.js');
+const winston = require('./common/winston_config.js');
 
 
 const app = express();
-const auth = require('../router/auth_Routes.js');
-const home = require('../router/home_Routes.js');
-const players = require('../router/players_Routes.js');
-const matches = require('../router/matches_Routes.js');
-const search = require('../router/search_Routes.js');
-const checkAuth = require('../common/routes_protector.js');
-const passportConfig = require('../common/passport_strategy.js');
+const auth = require('./router/auth_Routes.js');
+const home = require('./router/home_Routes.js');
+const players = require('./router/players_Routes.js');
+const matches = require('./router/matches_Routes.js');
+const search = require('./router/search_Routes.js');
+const checkAuth = require('./common/routes_middleware.js');
+const passportConfig = require('./common/passport_strategy.js');
 
 app.set('view engine', 'ejs');
 app.set('views', `${appRoot}/src/views`);

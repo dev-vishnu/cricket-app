@@ -1,6 +1,6 @@
 const express = require('express');
 const playersController = require('../controller/playersController.js');
-const logger = require('../winston/config.js');
+const logger = require('../common/winston_config.js');
 
 const search = express.Router();
 

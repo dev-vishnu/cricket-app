@@ -1,7 +1,7 @@
 const mysql = require('mysql2/promise');
 const config = require('../config/dbConfig.js');
 const matchData = require('../models/matches.json');
-const logger = require('../winston/config.js');
+const logger = require('../common/winston_config.js');
 
 async function insertMatchData() {
   matchData.matches.forEach(async (element) => {

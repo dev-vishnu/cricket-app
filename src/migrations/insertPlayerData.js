@@ -3,7 +3,7 @@ const axios = require('axios');
 
 const config = require('../config/dbConfig.js');
 const playerData = require('../models/players.json');
-const logger = require('../winston/config.js');
+const logger = require('../common/winston_config.js');
 
 async function insertPlayerData() {
   try {

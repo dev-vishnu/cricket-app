@@ -1,5 +1,5 @@
 const mysql = require('mysql2/promise');
-const logger = require('../winston/config.js');
+const logger = require('../common/winston_config.js');
 
 const query = 'create database if not exists cricDb';
 

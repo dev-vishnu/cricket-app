@@ -1,7 +1,5 @@
 const request = require('supertest');
-const app = require('../src/app/index.js');
-
-/* eslint-env mocha */
+const app = require('../src/index.js');
 
 describe('Testing User login', () => {
   it('Testing login with incorrect credentials', (done) => {

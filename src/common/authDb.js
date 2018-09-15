@@ -1,5 +1,5 @@
 const mongoClient = require('mongodb').MongoClient;
-const logger = require('../winston/config.js');
+const logger = require('../common/winston_config.js');
 
 async function authDB() {
   try {

@@ -1,7 +1,7 @@
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
 const loginUser = require('../controller/authController.js');
-const logger = require('../winston/config.js');
+const logger = require('../common/winston_config.js');
 
 
 function passportConfig(passport) {

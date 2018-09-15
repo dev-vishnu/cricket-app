@@ -1,7 +1,7 @@
 const mysql = require('mysql2/promise');
 const config = require('../config/dbConfig.js');
 const query = require('../models/sql_queries/queries.js');
-const logger = require('../winston/config.js');
+const logger = require('../common/winston_config.js');
 
 async function getMatchData() {
   let result;

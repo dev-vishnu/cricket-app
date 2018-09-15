@@ -1,8 +1,7 @@
 const expecting = require('chai').expect;
+const logger = require('../src/common/winston_config.js');
 
 const matchesController = require('../src/controller/matchesController.js');
-
-/* eslint-env mocha */
 
 describe('Test For Matches Controllers', () => {
   it('Testing Matches Controller for all matches', async () => {
@@ -32,7 +31,7 @@ describe('Test For Matches Controllers', () => {
     try {
       matchData = await matchesController.getMatchData();
     } catch (err) {
-      console.log(err);
+      logger.info(`ERROR: mocha testing ${err}`);
     }
     expecting(expectedValue).deep.equal(matchData[0]);
   });
@@ -57,7 +56,7 @@ describe('Test For Matches Controllers', () => {
       const id = 1;
       matchData = await matchesController.getMatchById(id);
     } catch (err) {
-      console.log(err);
+      logger.info(`ERROR: mocha testing ${err}`);
     }
 
     expecting(expectedValue).deep.equal(matchData[0]);

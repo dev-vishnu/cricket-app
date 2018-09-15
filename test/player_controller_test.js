@@ -1,8 +1,7 @@
 const expecting = require('chai').expect;
+const logger = require('../src/common/winston_config.js');
 
 const playerController = require('../src/controller/playersController.js');
-
-/* eslint-env mocha */
 
 describe('Test For Controllers', () => {
   it('Testing Players Controller for all players', async () => {
@@ -34,7 +33,7 @@ describe('Test For Controllers', () => {
     try {
       playerData = await playerController.getPlayerData();
     } catch (err) {
-      console.log(err);
+      logger.info(`ERROR: mocha testing ${err}`);
     }
     expecting(expectedValue).deep.equal(playerData[0]);
   });
@@ -59,7 +58,7 @@ describe('Test For Controllers', () => {
       const id = 1;
       playerData = await playerController.getPlayerById(id);
     } catch (err) {
-      console.log(err);
+      logger.info(`ERROR: mocha testing ${err}`);
     }
 
     expecting(expectedValue).deep.equal(playerData[0]);

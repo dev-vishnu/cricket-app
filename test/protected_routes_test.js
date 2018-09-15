@@ -1,10 +1,8 @@
 
 const request = require('supertest');
-const app = require('../src/app/index.js');
+const app = require('../src/index.js');
 
 const agent = request.agent(app);
-
-/* eslint-env mocha */
 
 describe('Testing Protected Routes without authentication', () => {
   it('Testing routes ("/") without authentication', (done) => {

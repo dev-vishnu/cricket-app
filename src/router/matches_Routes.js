@@ -1,7 +1,7 @@
 const express = require('express');
 const matchController = require('../controller/matchesController.js');
 const config = require('../config/dbConfig.js');
-const logger = require('../winston/config.js');
+const logger = require('../common/winston_config.js');
 
 const matches = express.Router();
 

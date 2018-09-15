@@ -3,7 +3,7 @@ const passport = require('passport');
 
 
 const register = require('../controller/authController.js');
-const logger = require('../winston/config.js');
+const logger = require('../common/winston_config.js');
 
 
 const auth = express.Router();

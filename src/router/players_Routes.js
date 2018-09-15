@@ -2,7 +2,7 @@
 const express = require('express');
 const config = require('../config/dbConfig');
 const playerController = require('../controller/playersController');
-const logger = require('../winston/config.js');
+const logger = require('../common/winston_config.js');
 
 
 const players = express.Router();

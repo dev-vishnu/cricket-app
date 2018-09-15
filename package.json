@@ -41,7 +41,9 @@
     "eslintwatch": "npm run eslint --watch",
     "eslint": "esw src",
     "open-src": "nodemon src/app/index.js --no-deprecation",
-    "test": "db='testCricDb' logging='off' mocha --no-deprecation"
+    "eslint-test":"esw test",
+    "mocha": "db='testCricDb' logging='off' mocha --no-deprecation",
+    "test": "npm-run-all eslint-test mocha"
   },
   "repository": {
     "type": "git",
