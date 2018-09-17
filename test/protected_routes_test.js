@@ -4,6 +4,7 @@ const app = require('../src/index.js');
 
 const agent = request.agent(app);
 
+
 describe('Testing Protected Routes without authentication', () => {
   it('Testing routes ("/") without authentication', (done) => {
     agent.get('/')
@@ -66,6 +67,11 @@ describe('Testing protected routes with correct authentication', () => {
   });
   it('Testing ("/matches") routes with correct authentication', (done) => {
     agent.get('/matches')
+      .expect(200)
+      .end(done);
+  });
+  it('Testing ("/search") routes with correct authentication', (done) => {
+    agent.get('/search')
       .expect(200)
       .end(done);
   });

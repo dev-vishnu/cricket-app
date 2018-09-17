@@ -7,6 +7,7 @@ const search = express.Router();
 search.get('/', async (req, res) => {
   try {
     const searchTerm = req.query;
+    res.sendStatus(200);
     const playerData = await playersController.getPlayerDataBySearch(searchTerm.search);
     res.render('players', { players: playerData[0] });
   } catch (err) {

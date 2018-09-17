@@ -23,6 +23,7 @@ auth.post('/register', async (req, res) => {
   const user = (req.body);
   const result = await register.registerUser(user);
   if (!result) {
+    res.sendStatus(400);
     res.send('Register failed');
     logger.info(`Registration failed for ${user.username}`);
   } else {
