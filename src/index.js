@@ -24,9 +24,8 @@ app.use(express.static('public'));
 app.use(morgan('combined', { stream: winston.stream }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-passportConfig(passport);
 app.use(session({ secret: 'yefaydfcavdfva3210d' }));
-
+passportConfig(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 

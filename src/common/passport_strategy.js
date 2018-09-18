@@ -1,23 +1,17 @@
 const LocalStrategy = require('passport-local').Strategy;
-const bcrypt = require('bcrypt');
-const loginUser = require('../controller/authController.js');
-const logger = require('../common/winston_config.js');
+const axios = require('axios');
+const logger = require('./winston_config.js');
 
 
 function passportConfig(passport) {
   passport.use(new LocalStrategy(
     (async (username, password, done) => {
       try {
-        const result = await loginUser.findUserByUsername(username);
-        if (!result) {
-          done(null, false);
+        const result = await axios.post('http://localhost:3000/login', { username, password });
+        if (!(result.data)) {
+          return done(null, false);
         }
-        const hash = result.password;
-        const isMatch = await bcrypt.compare(password, hash);
-        if (isMatch) {
-          return done(null, result);
-        }
-        return done(null, false);
+        return done(null, result.data);
       } catch (err) {
         return done(err, false);
       }
@@ -28,6 +22,7 @@ function passportConfig(passport) {
     if (!user) {
       done(null, false);
     }
+    logger.info(`${user.username} logged in`);
     done(null, user.username);
   });
 
