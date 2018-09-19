@@ -1,26 +1,26 @@
 
-const express = require('express');
-const config = require('../config/dbConfig');
-const playerController = require('../controller/playersController');
-const logger = require('../common/winston_config.js');
+import { Router } from 'express';
+import config from '../config/dbConfig';
+import { getPlayerData, getPlayerById, getPlayerStats } from '../controller/playersController';
+import winston from '../common/winston_config';
 
 
-const players = express.Router();
+const players = Router();
 
 players.get('/', async (req, res) => {
   try {
-    const playerData = await playerController.getPlayerData(config);
+    const playerData = await getPlayerData(config);
     res.render('players', { players: playerData[0] });
   } catch (err) {
-    logger.log(err);
+    winston.logger.info(err);
   }
 });
 
 players.get('/:id', async (req, res) => {
   try {
     const playerID = req.params.id;
-    const player = await playerController.getPlayerById(playerID, config);
-    const playerstats = (await playerController.getPlayerStats(player[0][0].pid)).data;
+    const player = await getPlayerById(playerID, config);
+    const playerstats = (await getPlayerStats(player[0][0].pid)).data;
     const bowlingstats = playerstats.data.bowling;
     const battingstats = playerstats.data.batting;
     res.render('playerdetails',
@@ -28,9 +28,9 @@ players.get('/:id', async (req, res) => {
         player: player[0][0], playerstats, bowlingstats, battingstats,
       });
   } catch (err) {
-    logger.info(err);
+    winston.logger.info(err);
   }
 });
 
 
-module.exports = players;
+export default players;

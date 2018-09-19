@@ -1,18 +1,18 @@
-const mysql = require('mysql2/promise');
-const config = require('../config/dbConfig.js');
-const matchData = require('../models/matches.json');
-const logger = require('../common/winston_config.js');
+import { createConnection } from 'mysql2/promise';
+import config from '../config/dbConfig';
+import { matches } from '../models/matches.json';
+import winston from '../common/winston_config';
 
 async function insertMatchData() {
-  matchData.matches.forEach(async (element) => {
+  matches.forEach(async (element) => {
     const query = `insert into matches values(${element.match_id},"${element.teams}","${element.date}","${element.location}","${element.match}","${element.toss}","${element.score}","${element.winner}","${element.mom}")`;
     try {
-      const connection = await mysql.createConnection(config);
+      const connection = await createConnection(config);
       await connection.execute(query);
       await connection.end();
     } catch (error) {
-      logger.info(error);
+      winston.info(error);
     }
   });
 }
-module.exports.insertMatchData = insertMatchData;
+export default { insertMatchData };

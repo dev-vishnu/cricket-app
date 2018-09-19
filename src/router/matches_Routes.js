@@ -1,27 +1,27 @@
-const express = require('express');
-const matchController = require('../controller/matchesController.js');
-const config = require('../config/dbConfig.js');
-const logger = require('../common/winston_config.js');
+import { Router } from 'express';
+import { getMatchData, getMatchById } from '../controller/matchesController';
+import config from '../config/dbConfig';
+import winston from '../common/winston_config';
 
-const matches = express.Router();
+const matches = Router();
 
 matches.get('/', async (req, res) => {
   try {
-    const matchData = await matchController.getMatchData(config);
+    const matchData = await getMatchData(config);
     res.render('matches', { matches: matchData[0] });
   } catch (err) {
-    logger.info(err);
+    winston.logger.info(err);
   }
 });
 
 matches.get('/:id', async (req, res) => {
   try {
     const matchID = req.params.id;
-    const match = await matchController.getMatchById(matchID, config);
+    const match = await getMatchById(matchID, config);
     res.render('matchdetails', { match: match[0][0] });
   } catch (err) {
-    logger.info(err);
+    winston.logger.info(err);
   }
 });
 
-module.exports = matches;
+export default matches;

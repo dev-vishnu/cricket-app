@@ -1,7 +1,7 @@
-const expecting = require('chai').expect;
-const logger = require('../src/common/winston_config.js');
+import { expect as expecting } from 'chai';
+import winston from '../src/common/winston_config';
 
-const matchesController = require('../src/controller/matchesController.js');
+import { getMatchData, getMatchById } from '../src/controller/matchesController';
 
 describe('Test For Matches Controllers', () => {
   it('Testing Matches Controller for all matches', async () => {
@@ -29,9 +29,9 @@ describe('Test For Matches Controllers', () => {
       mom: 1,
     }];
     try {
-      matchData = await matchesController.getMatchData();
+      matchData = await getMatchData();
     } catch (err) {
-      logger.info(`ERROR: mocha testing ${err}`);
+      winston.logger.info(`ERROR: mocha testing ${err}`);
     }
     expecting(expectedValue).deep.equal(matchData[0]);
   });
@@ -54,9 +54,9 @@ describe('Test For Matches Controllers', () => {
     ];
     try {
       const id = 1;
-      matchData = await matchesController.getMatchById(id);
+      matchData = await getMatchById(id);
     } catch (err) {
-      logger.info(`ERROR: mocha testing ${err}`);
+      winston.logger.info(`ERROR: mocha testing ${err}`);
     }
 
     expecting(expectedValue).deep.equal(matchData[0]);

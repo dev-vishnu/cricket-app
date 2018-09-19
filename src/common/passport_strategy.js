@@ -1,13 +1,15 @@
+import axios from 'axios';
+import token from './auth_token';
+import winston from './winston_config';
+
 const LocalStrategy = require('passport-local').Strategy;
-const axios = require('axios');
-const logger = require('./winston_config.js');
 
 
 function passportConfig(passport) {
   passport.use(new LocalStrategy(
     (async (username, password, done) => {
       try {
-        const result = await axios.post('http://localhost:3000/login', { username, password });
+        const result = await axios.post('http://localhost:3000/login', { username, password, token });
         if (!(result.data)) {
           return done(null, false);
         }
@@ -18,12 +20,12 @@ function passportConfig(passport) {
     }),
   ));
 
-  passport.serializeUser((user, done) => {
-    if (!user) {
+  passport.serializeUser((username, done) => {
+    if (!username) {
       done(null, false);
     }
-    logger.info(`${user.username} logged in`);
-    done(null, user.username);
+    winston.logger.info(`${username} logged in`);
+    done(null, username);
   });
 
   passport.deserializeUser(async (username, done) => {
@@ -33,11 +35,11 @@ function passportConfig(passport) {
       try {
         done(null, username);
       } catch (err) {
-        logger.info(err);
+        winston.logger.info(err);
         done(err, username);
       }
     }
   });
 }
 
-module.exports = passportConfig;
+export default passportConfig;

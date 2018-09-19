@@ -1,8 +1,7 @@
+import { agent as _agent } from 'supertest';
+import app from '../src/index';
 
-const request = require('supertest');
-const app = require('../src/index.js');
-
-const agent = request.agent(app);
+const agent = _agent(app);
 
 
 describe('Testing Protected Routes without authentication', () => {
@@ -71,7 +70,7 @@ describe('Testing protected routes with correct authentication', () => {
       .end(done);
   });
   it('Testing ("/search") routes with correct authentication', (done) => {
-    agent.get('/search')
+    agent.get('/search?search=dhoni')
       .expect(200)
       .end(done);
   });

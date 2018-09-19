@@ -1,18 +1,17 @@
-const express = require('express');
-const playersController = require('../controller/playersController.js');
-const logger = require('../common/winston_config.js');
+import { Router } from 'express';
+import { getPlayerDataBySearch } from '../controller/playersController';
+import winston from '../common/winston_config';
 
-const search = express.Router();
+const search = Router();
 
 search.get('/', async (req, res) => {
   try {
     const searchTerm = req.query;
-    res.sendStatus(200);
-    const playerData = await playersController.getPlayerDataBySearch(searchTerm.search);
+    const playerData = await getPlayerDataBySearch(searchTerm.search);
     res.render('players', { players: playerData[0] });
   } catch (err) {
-    logger.info(err);
+    winston.logger.info(err);
   }
 });
 
-module.exports = search;
+export default search;

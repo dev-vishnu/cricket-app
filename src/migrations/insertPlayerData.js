@@ -1,16 +1,16 @@
-const mysql = require('mysql2/promise');
-const axios = require('axios');
+import { createConnection } from 'mysql2/promise';
+import { get } from 'axios';
 
-const config = require('../config/dbConfig.js');
-const playerData = require('../models/players.json');
-const logger = require('../common/winston_config.js');
+import config from '../config/dbConfig';
+import { players } from '../models/players.json';
+import winston from '../common/winston_config';
 
 async function insertPlayerData() {
   try {
-    const connection = await mysql.createConnection(config);
-    playerData.players.forEach(async (element) => {
+    const connection = await createConnection(config);
+    players.forEach(async (element) => {
       const apiKey = ('7u62tyv5a8S8BhXI8e3nwpiDUk62');
-      const result = await axios.get(`https://cricapi.com/api/playerStats?apikey=${apiKey}&pid=${element.pid}`);
+      const result = await get(`https://cricapi.com/api/playerStats?apikey=${apiKey}&pid=${element.pid}`);
       const query = 'insert into players values(?,?,?,?,?,?,?,?,?,?)';
 
       await connection.execute(query,
@@ -20,8 +20,8 @@ async function insertPlayerData() {
       await connection.end();
     });
   } catch (error) {
-    logger.info(error);
+    winston.logger.info(error);
   }
 }
 
-module.exports.insertPlayerData = insertPlayerData;
+export default { insertPlayerData };

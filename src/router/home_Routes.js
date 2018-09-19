@@ -1,10 +1,10 @@
-const express = require('express');
+import { Router } from 'express';
 
-const home = express.Router();
+const home = Router();
 
 
 home.get('/', (req, res) => {
   res.render('home');
 });
 
-module.exports = home;
+export default home;

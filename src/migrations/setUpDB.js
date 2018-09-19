@@ -1,6 +1,6 @@
-const createTables = require('./createTables');
+import createTables from './createTables';
 
 function setup() {
-  createTables.createTables();
+  createTables();
 }
 setup();

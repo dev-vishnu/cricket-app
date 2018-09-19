@@ -6,4 +6,4 @@ function checkAuth(req, res, next) {
     next();
   }
 }
-module.exports = checkAuth;
+export default checkAuth;

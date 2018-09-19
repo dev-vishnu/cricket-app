@@ -1,7 +1,7 @@
-const expecting = require('chai').expect;
-const logger = require('../src/common/winston_config.js');
+import { expect as expecting } from 'chai';
+import winston from '../src/common/winston_config';
 
-const playerController = require('../src/controller/playersController.js');
+import { getPlayerData, getPlayerById } from '../src/controller/playersController';
 
 describe('Test For Controllers', () => {
   it('Testing Players Controller for all players', async () => {
@@ -31,9 +31,9 @@ describe('Test For Controllers', () => {
       about: "A typical modern-day cricketer, Virat Kohli plays his game aggressively, bares his emotions loudly in public, yet retains the element of maturity that forms an integral part of every good and great player. Anil Kumble said he had thought hard before calling Kohli the best under-22 player in international cricket - that would rate as perhaps the best compliments he has received. Itis also proof of Kohli's transformation as a player.",
     }];
     try {
-      playerData = await playerController.getPlayerData();
+      playerData = await getPlayerData();
     } catch (err) {
-      logger.info(`ERROR: mocha testing ${err}`);
+      winston.logger.info(`ERROR: mocha testing ${err}`);
     }
     expecting(expectedValue).deep.equal(playerData[0]);
   });
@@ -56,9 +56,9 @@ describe('Test For Controllers', () => {
     ];
     try {
       const id = 1;
-      playerData = await playerController.getPlayerById(id);
+      playerData = await getPlayerById(id);
     } catch (err) {
-      logger.info(`ERROR: mocha testing ${err}`);
+      winston.logger.info(`ERROR: mocha testing ${err}`);
     }
 
     expecting(expectedValue).deep.equal(playerData[0]);

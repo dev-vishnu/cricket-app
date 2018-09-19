@@ -6,4 +6,4 @@ const config = {
   database: process.env.db || 'cricDb',
 };
 
-module.exports = config;
+export default config;

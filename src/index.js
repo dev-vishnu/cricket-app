@@ -1,29 +1,30 @@
 
-const express = require('express');
-const session = require('express-session');
-const appRoot = require('app-root-path');
-const morgan = require('morgan');
-const bodyParser = require('body-parser');
-const passport = require('passport');
-const winston = require('./common/winston_config.js');
+import express, { static as _static } from 'express';
+import session from 'express-session';
+import appRoot from 'app-root-path';
+import morgan from 'morgan';
+import { urlencoded, json } from 'body-parser';
+import passport from 'passport';
+import winston from './common/winston_config';
 
+
+import auth from './router/auth_Routes';
+import home from './router/home_Routes';
+import players from './router/players_Routes';
+import matches from './router/matches_Routes';
+import search from './router/search_Routes';
+import checkAuth from './common/routes_middleware';
+import passportConfig from './common/passport_strategy';
 
 const app = express();
-const auth = require('./router/auth_Routes.js');
-const home = require('./router/home_Routes.js');
-const players = require('./router/players_Routes.js');
-const matches = require('./router/matches_Routes.js');
-const search = require('./router/search_Routes.js');
-const checkAuth = require('./common/routes_middleware.js');
-const passportConfig = require('./common/passport_strategy.js');
-
-app.set('view engine', 'ejs');
 app.set('views', `${appRoot}/src/views`);
+app.set('view engine', 'ejs');
 
-app.use(express.static('public'));
-app.use(morgan('combined', { stream: winston.stream }));
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(_static('public'));
+
+app.use(morgan('combined', { stream: winston.logger.stream }));
+app.use(urlencoded({ extended: true }));
+app.use(json());
 app.use(session({ secret: 'yefaydfcavdfva3210d' }));
 passportConfig(passport);
 app.use(passport.initialize());
@@ -35,6 +36,6 @@ app.use('/home', checkAuth, home);
 app.use('/players', checkAuth, players);
 app.use('/matches', checkAuth, matches);
 
-module.exports = app;
+export default app;
 
 app.listen(4000);

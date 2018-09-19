@@ -4,7 +4,7 @@ const querySelectAllPlayers = 'select * from players order by player_id asc';
 const querySelectAllPlayerById = 'select*from players where player_id = ?';
 const querySearchPlayer = 'select * from players where Match(playername, about, role, birthplace) Against(?)';
 
-module.exports = {
+export default {
   querySelectAllMatches,
   querySelectMatchByMatchId,
   querySelectAllPlayers,

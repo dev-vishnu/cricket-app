@@ -1,11 +1,12 @@
-const express = require('express');
-const passport = require('passport');
-const axios = require('axios');
+import { Router } from 'express';
+import passport from 'passport';
+import axios from 'axios';
 
-const logger = require('../common/winston_config.js');
+import token from '../common/auth_token';
+import winston from '../common/winston_config';
 
 
-const auth = express.Router();
+const auth = Router();
 
 auth.get('/', (req, res) => {
   res.render('login');
@@ -21,16 +22,20 @@ auth.get('/signUp', (req, res) => {
 
 auth.post('/register', async (req, res) => {
   const user = req.body;
-  const result = await axios.post('http://localhost:3000/register', { username: user.username, password: user.password });
+  const registerUrl = 'http://localhost:3000/register';
+  const result = await axios.post(registerUrl,
+    { username: user.username, password: user.password, token });
+
   if (!result.data) {
-    res.send('Register failed');
+    res.redirect('/');
   } else {
-    logger.info(`${result.data.username} Registered`);
-    res.redirect('/login');
+    winston.logger.info(`${result.data.username} Registered`);
+    res.redirect('/');
   }
 });
 
-auth.post('/login', passport.authenticate('local', { successRedirect: '/home', failureRedirect: '/' }), (req, res) => {
+auth.post('/login', passport.authenticate('local',
+  { successRedirect: '/home', failureRedirect: '/' }), (req, res) => {
   res.redirect('/home');
 });
 
@@ -39,4 +44,4 @@ auth.get('/logout', (req, res) => {
   res.redirect('/');
 });
 
-module.exports = auth;
+export default auth;
