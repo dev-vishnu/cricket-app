@@ -1,5 +1,5 @@
 import axios from 'axios';
-import token from './auth_token';
+import token from '../config/auth_token';
 import winston from './winston_config';
 
 const LocalStrategy = require('passport-local').Strategy;
@@ -9,7 +9,7 @@ function passportConfig(passport) {
   passport.use(new LocalStrategy(
     (async (username, password, done) => {
       try {
-        const result = await axios.post('http://localhost:3000/login', { username, password, token });
+        const result = await axios.post('http://localhost:3000/auth/login', { username, password, token });
         if (!(result.data)) {
           return done(null, false);
         }

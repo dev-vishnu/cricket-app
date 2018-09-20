@@ -2,7 +2,7 @@ import { Router } from 'express';
 import passport from 'passport';
 import axios from 'axios';
 
-import token from '../common/auth_token';
+import token from '../config/auth_token';
 import winston from '../common/winston_config';
 
 
@@ -22,7 +22,7 @@ auth.get('/signUp', (req, res) => {
 
 auth.post('/register', async (req, res) => {
   const user = req.body;
-  const registerUrl = 'http://localhost:3000/register';
+  const registerUrl = 'http://localhost:3000/auth/register';
   const result = await axios.post(registerUrl,
     { username: user.username, password: user.password, token });
 

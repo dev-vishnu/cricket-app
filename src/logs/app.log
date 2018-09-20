@@ -5509,3 +5509,106 @@
 {"message":"::1 - - [19/Sep/2018:10:01:10 +0000] \"GET /home HTTP/1.1\" 304 - \"http://localhost:4000/players/2\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
 {"message":"::1 - - [19/Sep/2018:10:01:12 +0000] \"GET /logout? HTTP/1.1\" 302 46 \"http://localhost:4000/home\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
 {"message":"::1 - - [19/Sep/2018:10:01:12 +0000] \"GET / HTTP/1.1\" 304 - \"http://localhost:4000/home\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:01:53 +0000] \"GET / HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:01:54 +0000] \"GET /favicon.ico HTTP/1.1\" 404 150 \"http://localhost:4000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"vishnu logged in","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:02:02 +0000] \"POST /login HTTP/1.1\" 302 54 \"http://localhost:4000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:02:02 +0000] \"GET /home HTTP/1.1\" 304 - \"http://localhost:4000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:02:41 +0000] \"GET /logout? HTTP/1.1\" 302 46 \"http://localhost:4000/home\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:02:41 +0000] \"GET / HTTP/1.1\" 304 - \"http://localhost:4000/home\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:02:47 +0000] \"POST /login HTTP/1.1\" 500 851 \"http://localhost:4000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:04:07 +0000] \"GET / HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:04:15 +0000] \"POST /login HTTP/1.1\" 500 851 \"http://localhost:4000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:04:38 +0000] \"GET /login HTTP/1.1\" 200 1701 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:04:44 +0000] \"POST /login HTTP/1.1\" 500 851 \"http://localhost:4000/login\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"vishnu logged in","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:06:33 +0000] \"POST /login HTTP/1.1\" 302 54 \"http://localhost:4000/login\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:06:33 +0000] \"GET /home HTTP/1.1\" 304 - \"http://localhost:4000/login\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:18:44 +0000] \"GET /logout? HTTP/1.1\" 302 46 \"http://localhost:4000/home\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:18:44 +0000] \"GET / HTTP/1.1\" 304 - \"http://localhost:4000/home\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:18:49 +0000] \"POST /login HTTP/1.1\" 500 851 \"http://localhost:4000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:20:05 +0000] \"POST /login HTTP/1.1\" 500 851 \"http://localhost:4000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"vishnu logged in","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:21:14 +0000] \"POST /login HTTP/1.1\" 302 54 \"http://localhost:4000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:21:14 +0000] \"GET /home HTTP/1.1\" 304 - \"http://localhost:4000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:21:15 +0000] \"GET /home HTTP/1.1\" 304 - \"http://localhost:4000/home\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:21:17 +0000] \"GET /logout? HTTP/1.1\" 302 46 \"http://localhost:4000/home\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:21:17 +0000] \"GET / HTTP/1.1\" 304 - \"http://localhost:4000/home\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"vishnu logged in","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:21:23 +0000] \"POST /login HTTP/1.1\" 302 54 \"http://localhost:4000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:21:23 +0000] \"GET /home HTTP/1.1\" 304 - \"http://localhost:4000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:21:27 +0000] \"GET /logout? HTTP/1.1\" 302 46 \"http://localhost:4000/home\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:21:27 +0000] \"GET / HTTP/1.1\" 304 - \"http://localhost:4000/home\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"error":{"code":"EADDRINUSE","errno":"EADDRINUSE","syscall":"listen","address":"::","port":4000},"level":"error","message":"uncaughtException: listen EADDRINUSE :::4000\nError: listen EADDRINUSE :::4000\n    at Object._errnoException (util.js:1022:11)\n    at _exceptionWithHostPort (util.js:1044:20)\n    at Server.setupListenHandle [as _listen2] (net.js:1351:14)\n    at listenInCluster (net.js:1392:12)\n    at Server.listen (net.js:1476:7)\n    at Function.listen (/home/dev/project-players-01/node_modules/express/lib/application.js:618:24)\n    at Object.<anonymous> (/home/dev/project-players-01/src/index.js:41:5)\n    at Module._compile (module.js:643:30)\n    at loader (/home/dev/.nvm/versions/node/v8.9.4/lib/node_modules/babel-cli/node_modules/babel-register/lib/node.js:144:5)\n    at Object.require.extensions.(anonymous function) [as .js] (/home/dev/.nvm/versions/node/v8.9.4/lib/node_modules/babel-cli/node_modules/babel-register/lib/node.js:154:7)","stack":"Error: listen EADDRINUSE :::4000\n    at Object._errnoException (util.js:1022:11)\n    at _exceptionWithHostPort (util.js:1044:20)\n    at Server.setupListenHandle [as _listen2] (net.js:1351:14)\n    at listenInCluster (net.js:1392:12)\n    at Server.listen (net.js:1476:7)\n    at Function.listen (/home/dev/project-players-01/node_modules/express/lib/application.js:618:24)\n    at Object.<anonymous> (/home/dev/project-players-01/src/index.js:41:5)\n    at Module._compile (module.js:643:30)\n    at loader (/home/dev/.nvm/versions/node/v8.9.4/lib/node_modules/babel-cli/node_modules/babel-register/lib/node.js:144:5)\n    at Object.require.extensions.(anonymous function) [as .js] (/home/dev/.nvm/versions/node/v8.9.4/lib/node_modules/babel-cli/node_modules/babel-register/lib/node.js:154:7)","exception":true,"date":"Thu Sep 20 2018 02:08:52 GMT+0530 (IST)","process":{"pid":15329,"uid":1000,"gid":1000,"cwd":"/home/dev/project-players-01","execPath":"/home/dev/.nvm/versions/node/v8.9.4/bin/node","version":"v8.9.4","argv":["node","/home/dev/project-players-01/src/index.js","--no-deprecation"],"memoryUsage":{"rss":92901376,"heapTotal":62967808,"heapUsed":42402544,"external":1524928}},"os":{"loadavg":[0.75732421875,0.85888671875,0.80419921875],"uptime":13599},"trace":[{"column":11,"file":"util.js","function":"Object._errnoException","line":1022,"method":"_errnoException","native":false},{"column":20,"file":"util.js","function":"_exceptionWithHostPort","line":1044,"method":null,"native":false},{"column":14,"file":"net.js","function":"Server.setupListenHandle [as _listen2]","line":1351,"method":"setupListenHandle [as _listen2]","native":false},{"column":12,"file":"net.js","function":"listenInCluster","line":1392,"method":null,"native":false},{"column":7,"file":"net.js","function":"Server.listen","line":1476,"method":"listen","native":false},{"column":24,"file":"/home/dev/project-players-01/node_modules/express/lib/application.js","function":"Function.listen","line":618,"method":"listen","native":false},{"column":5,"file":"/home/dev/project-players-01/src/index.js","function":null,"line":41,"method":null,"native":false},{"column":30,"file":"module.js","function":"Module._compile","line":643,"method":"_compile","native":false},{"column":5,"file":"/home/dev/.nvm/versions/node/v8.9.4/lib/node_modules/babel-cli/node_modules/babel-register/lib/node.js","function":"loader","line":144,"method":null,"native":false},{"column":7,"file":"/home/dev/.nvm/versions/node/v8.9.4/lib/node_modules/babel-cli/node_modules/babel-register/lib/node.js","function":"Object.require.extensions.(anonymous function) [as .js]","line":154,"method":"js]","native":false}]}
+{"message":"::1 - - [19/Sep/2018:20:39:48 +0000] \"GET / HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:39:56 +0000] \"POST /login HTTP/1.1\" 302 46 \"http://localhost:4000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:39:56 +0000] \"GET / HTTP/1.1\" 304 - \"http://localhost:4000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"x logged in","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:40:03 +0000] \"POST /login HTTP/1.1\" 302 54 \"http://localhost:4000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:40:03 +0000] \"GET /home HTTP/1.1\" 304 - \"http://localhost:4000/\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:40:05 +0000] \"GET /logout? HTTP/1.1\" 302 46 \"http://localhost:4000/home\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::1 - - [19/Sep/2018:20:40:05 +0000] \"GET / HTTP/1.1\" 304 - \"http://localhost:4000/home\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:25:51 +0000] \"POST /login HTTP/1.1\" 500 372 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:25:51 +0000] \"POST /login HTTP/1.1\" 500 372 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:25:52 +0000] \"GET / HTTP/1.1\" 200 1701 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:25:52 +0000] \"GET /signUp HTTP/1.1\" 200 1857 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:25:52 +0000] \"GET /login HTTP/1.1\" 200 1701 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:25:52 +0000] \"GET /home HTTP/1.1\" 302 23 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:25:52 +0000] \"GET /players HTTP/1.1\" 302 23 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:25:52 +0000] \"GET /matches HTTP/1.1\" 302 23 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:25:52 +0000] \"POST /login HTTP/1.1\" 500 372 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:25:52 +0000] \"GET /logout HTTP/1.1\" 302 23 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:27:38 +0000] \"POST /login HTTP/1.1\" 302 23 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"vishnu logged in","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:27:39 +0000] \"POST /login HTTP/1.1\" 302 27 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:27:39 +0000] \"GET / HTTP/1.1\" 200 1701 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:27:39 +0000] \"GET /signUp HTTP/1.1\" 200 1857 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:27:39 +0000] \"GET /login HTTP/1.1\" 200 1701 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:27:39 +0000] \"GET /home HTTP/1.1\" 302 23 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:27:39 +0000] \"GET /players HTTP/1.1\" 302 23 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:27:39 +0000] \"GET /matches HTTP/1.1\" 302 23 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"vishnu logged in","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:27:39 +0000] \"POST /login HTTP/1.1\" 302 27 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:27:39 +0000] \"GET /home HTTP/1.1\" 200 1247 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:27:39 +0000] \"GET /logout HTTP/1.1\" 302 23 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"vishnu logged in","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:27:39 +0000] \"POST /login HTTP/1.1\" 302 27 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:27:39 +0000] \"GET /players HTTP/1.1\" 200 3960 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:27:39 +0000] \"GET /logout HTTP/1.1\" 302 23 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"vishnu logged in","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:27:39 +0000] \"POST /login HTTP/1.1\" 302 27 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:27:39 +0000] \"GET /matches HTTP/1.1\" 200 2010 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:27:39 +0000] \"GET /logout HTTP/1.1\" 302 23 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"vishnu logged in","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:27:39 +0000] \"POST /login HTTP/1.1\" 302 27 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:27:39 +0000] \"GET /search?search=dhoni HTTP/1.1\" 200 2618 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:27:39 +0000] \"GET /logout HTTP/1.1\" 302 23 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:27:40 +0000] \"POST /register HTTP/1.1\" 302 23 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:27:40 +0000] \"POST /register HTTP/1.1\" 302 23 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:28:24 +0000] \"POST /login HTTP/1.1\" 302 23 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"vishnu logged in","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:28:24 +0000] \"POST /login HTTP/1.1\" 302 27 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:28:24 +0000] \"GET / HTTP/1.1\" 200 1701 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:28:24 +0000] \"GET /signUp HTTP/1.1\" 200 1857 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:28:24 +0000] \"GET /login HTTP/1.1\" 200 1701 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:28:24 +0000] \"GET /home HTTP/1.1\" 302 23 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:28:24 +0000] \"GET /players HTTP/1.1\" 302 23 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:28:24 +0000] \"GET /matches HTTP/1.1\" 302 23 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"vishnu logged in","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:28:24 +0000] \"POST /login HTTP/1.1\" 302 27 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:28:24 +0000] \"GET /home HTTP/1.1\" 200 1247 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:28:24 +0000] \"GET /logout HTTP/1.1\" 302 23 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"vishnu logged in","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:28:25 +0000] \"POST /login HTTP/1.1\" 302 27 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:28:25 +0000] \"GET /players HTTP/1.1\" 200 3960 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:28:25 +0000] \"GET /logout HTTP/1.1\" 302 23 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"vishnu logged in","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:28:25 +0000] \"POST /login HTTP/1.1\" 302 27 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:28:25 +0000] \"GET /matches HTTP/1.1\" 200 2010 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:28:25 +0000] \"GET /logout HTTP/1.1\" 302 23 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"vishnu logged in","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:28:25 +0000] \"POST /login HTTP/1.1\" 302 27 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:28:25 +0000] \"GET /search?search=dhoni HTTP/1.1\" 200 2618 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:28:25 +0000] \"GET /logout HTTP/1.1\" 302 23 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:28:25 +0000] \"POST /register HTTP/1.1\" 302 23 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
+{"message":"::ffff:127.0.0.1 - - [20/Sep/2018:08:28:25 +0000] \"POST /register HTTP/1.1\" 302 23 \"-\" \"node-superagent/3.8.3\"\n","level":"info"}
