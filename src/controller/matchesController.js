@@ -5,7 +5,7 @@ async function getMatchData() {
   let result;
   try {
     /* request to data server */
-    result = await axios.get('http://localhost:9000/matchdata');
+    result = await axios.get('http://13.126.108.220:9000/matchdata');
   } catch (err) {
     winston.logger.info(err);
   }
@@ -17,7 +17,7 @@ async function getMatchById(id) {
   let result;
   try {
     /* request to data server */
-    result = await axios.get(`http://localhost:9000/matchdata/${id}`);
+    result = await axios.get(`http://13.126.108.220:9000/matchdata/${id}`);
   } catch (err) {
     winston.logger.info(err);
   }

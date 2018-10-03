@@ -4,7 +4,7 @@ import winston from '../common/winston_config';
 async function getPlayerData() {
   let result;
   try {
-    result = await axios.get('http://localhost:9000/playerdata');
+    result = await axios.get('http://13.126.108.220:9000/playerdata');
   } catch (error) {
     winston.logger.info(error);
   }
@@ -15,7 +15,7 @@ async function getPlayerData() {
 async function getPlayerById(id) {
   let result;
   try {
-    result = await axios.get(`http://localhost:9000/playerdata/${id}`);
+    result = await axios.get(`http://13.126.108.220:9000/playerdata/${id}`);
   } catch (err) {
     winston.logger.info(err);
   }
