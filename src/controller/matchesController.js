@@ -1,32 +1,28 @@
-import { createConnection } from 'mysql2/promise';
-import config from '../config/dbConfig';
-import query from '../models/sql_queries/queries';
+import axios from 'axios';
 import winston from '../common/winston_config';
 
 async function getMatchData() {
   let result;
   try {
-    const connection = await createConnection(config);
-    result = await connection.execute(query.querySelectAllMatches);
-    connection.end();
+    /* request to data server */
+    result = await axios.get('http://localhost:9000/matchdata');
   } catch (err) {
     winston.logger.info(err);
   }
 
-  return result;
+  return result.data;
 }
 
 async function getMatchById(id) {
   let result;
   try {
-    const connection = await createConnection(config);
-    result = await connection.execute(query.querySelectMatchByMatchId, [id]);
-    connection.end();
+    /* request to data server */
+    result = await axios.get(`http://localhost:9000/matchdata/${id}`);
   } catch (err) {
     winston.logger.info(err);
   }
 
-  return result;
+  return result.data;
 }
 
 export { getMatchData };

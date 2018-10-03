@@ -22,7 +22,7 @@
                         </h1>
                         <ul>
                             <li>
-                                <%=match.teams%>
+                                <%=match.team1%> vs <%=match.team2%>
                             </li>
                             <li>
                                 Date: <%=match.date%>
@@ -34,17 +34,16 @@
                                 Toss : <%=match.toss%>
                             </li>
                             <li>
-                                Score : <%=match.score%>
+                                Score : <%=match.team1_score%> and <%=match.team2_score%>
                             </li>
                             <li>
                                 Winner : <%=match.winner%>
                             </li>
                             <li>
-                               Man of the Match :<a href="../players/<%=match.mom%>"><%=match.playername%></a>
+                               Man of the Match :<a href="../players/<%=match.mom_player_id%>"><%=match.playername%></a>
                             </li>
                         </ul>
                     </div>
-                </a>
         </div>
     </section>
 
