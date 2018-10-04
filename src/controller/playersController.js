@@ -33,17 +33,16 @@ async function getPlayerStats(pid) {
   return result.data;
 }
 
-// async function getPlayerDataBySearch(searchTerm) {
-//   let result;
-//   try {
-//     /* request to data server */
-//   } catch (error) {
-//     winston.logger.info(error);
-//     return false;
-//   }
-//   return result;
-// }
+async function getPlayerDataBySearch(searchTerm) {
+  let result;
+  try {
+    result = await axios.get(`http://13.126.108.220:9000/playerdata/search?search=${searchTerm}`);
+  } catch (error) {
+    winston.logger.info(error);
+  }
+  return result.data;
+}
 
 export {
-  getPlayerStats, getPlayerData, getPlayerById,
+  getPlayerDataBySearch, getPlayerStats, getPlayerData, getPlayerById,
 };
