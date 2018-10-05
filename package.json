@@ -6,6 +6,7 @@
   "dependencies": {
     "app-root-path": "^2.1.0",
     "axios": "^0.18.0",
+    "babel-cli": "^6.26.0",
     "bcrypt": "^3.0.0",
     "body-parser": "^1.18.3",
     "cricapi": "^1.2.9",
@@ -19,6 +20,7 @@
     "morgan": "^1.9.0",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.1",
+    "nodemon": "^1.18.4",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",

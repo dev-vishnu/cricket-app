@@ -22,7 +22,7 @@ auth.get('/signUp', (req, res) => {
 
 auth.post('/register', async (req, res) => {
   const user = req.body;
-  const registerUrl = 'http://13.126.108.220:2000/auth/register';
+  const registerUrl = 'http://52.66.211.82:2000/auth/register';
   const result = await axios.post(registerUrl,
     { username: user.username, password: user.password, token });
 

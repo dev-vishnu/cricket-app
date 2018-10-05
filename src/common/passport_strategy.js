@@ -9,7 +9,7 @@ function passportConfig(passport) {
   passport.use(new LocalStrategy(
     (async (username, password, done) => {
       try {
-        const result = await axios.post('http://13.126.108.220:2000/auth/login', { username, password, token });
+        const result = await axios.post('http://52.66.211.82:2000/auth/login', { username, password, token });
         if (!(result.data)) {
           return done(null, false);
         }
