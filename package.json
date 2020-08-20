@@ -7,7 +7,7 @@
     "app-root-path": "^2.1.0",
     "axios": "^0.18.0",
     "babel-cli": "^6.26.0",
-    "bcrypt": "^3.0.0",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.18.3",
     "cricapi": "^1.2.9",
     "ejs": "^2.6.1",
