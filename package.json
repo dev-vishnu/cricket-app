@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "app-root-path": "^2.1.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "babel-cli": "^6.26.0",
     "bcrypt": "^3.0.0",
     "body-parser": "^1.18.3",
