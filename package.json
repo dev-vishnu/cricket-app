@@ -11,7 +11,7 @@
     "body-parser": "^1.18.3",
     "cricapi": "^1.2.9",
     "ejs": "^2.6.1",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "express-session": "^1.15.6",
     "js-alert": "^1.0.4",
     "mangodb": "^1.0.0",
